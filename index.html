@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steady: for expecting fathers</title>
+<meta name="description" content="A free, research-backed companion for fathers through pregnancy, birth and the fourth trimester: what to expect, how to help, your rights, naming laws by state, bags, birth plan, gear, traditions and one-to-one coaching with Nabil Rahman.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: a calm friend who has been through it twice; plain words, honest, never preachy; firm only on safety.
+   IDEA: a field guide and a steady hand on the shoulder — the pocket manual a dad keeps in the hospital bag.
+   PICTURE: two silhouettes side by side, her belly and his "dad belly" growing week by week, with this week's jobs.
+   COLOUR and TYPE: deep pine teal (calm, trust — lowers arousal), soft paper white, coral accent (warmth, action); Newsreader for editorial trust, Atkinson Hyperlegible for body (designed for legibility under stress and low vision).
+   LAYOUT: one home dashboard + topic routes on #hash, sticky wrapping section row, single reading column, tools inline, crisis help always one tap away. */
+:root{color-scheme:light dark;
+--bg:light-dark(#f8f7f3,#0f1f21);--card:light-dark(#ffffff,#16292c);--ink:light-dark(#142a2d,#e7efed);--soft:light-dark(#4d6366,#a8bcbb);
+--pine:light-dark(#123c3f,#9fd2cc);--pinebg:light-dark(#123c3f,#0b1719);--coral:light-dark(#b2442d,#ff8f73);--line:light-dark(#d9dfdb,#2a4245);
+--warn:light-dark(#8f1d2c,#ff9aa6);--warnbg:light-dark(#fde8e6,#3a1a20);--tint:light-dark(#e6f0ee,#1b3235)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:96px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Atkinson Hyperlegible",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Newsreader,Georgia,serif;font-weight:600;line-height:1.08;text-wrap:balance;margin:0 0 .45em}
+h1{font-size:clamp(34px,5.2vw,52px)}h2{font-size:clamp(28px,3.6vw,40px)}h3{font-size:22px;line-height:1.2}
+p{margin:0 0 .9em;max-width:68ch}a{color:var(--coral)}.note{font-size:14.5px;color:var(--soft)}
+.band{padding:clamp(28px,4vw,60px) max(5vw,16px)}.wrap{max-width:1180px;margin:0 auto}
+.dark{background:var(--pinebg);color:#eef5f3}.dark a{color:#ffb19e}.dark .note{color:#b9cfcc}
+header.top{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:8px max(5vw,16px);max-width:1180px;margin:0 auto;flex-wrap:wrap}
+.brand{font-family:Newsreader,serif;font-size:24px;font-weight:600;color:var(--pine);text-decoration:none}
+.bar .right{display:flex;gap:8px;flex-wrap:wrap}
+nav.sec{display:flex;gap:2px;overflow-x:auto;padding:0 max(5vw,16px) 8px;max-width:1180px;margin:0 auto}
+nav.sec a{flex:none;text-decoration:none;color:var(--ink);padding:9px 12px;border-radius:999px;font-size:15px;font-weight:700}
+nav.sec a[aria-current=page]{background:var(--pine);color:var(--bg)}
+button,.btn{font:inherit;font-weight:700;min-height:44px;padding:10px 18px;border-radius:12px;border:0;background:var(--pine);color:var(--bg);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.ghost{background:transparent!important;color:var(--pine)!important;border:1.5px solid var(--pine)!important}
+.dark .ghost{color:#eef5f3!important;border-color:#eef5f3!important}
+.help{background:light-dark(#8f1d2c,#ff9aa6);color:light-dark(#fff,#2a0b10)}
+.pill{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;font-size:15px;padding:8px 14px}
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px;width:100%}
+label{font-weight:700;display:block;margin:12px 0 4px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr))}
+.two{display:grid;gap:28px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+@media(max-width:860px){.two{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.dark .card{background:#183235;border-color:#2c4a4d;color:#eef5f3}
+.card h3 a{text-decoration:none;color:inherit}
+a.card{display:block;text-decoration:none;color:var(--ink)}a.card:hover{border-color:var(--pine)}
+.fig{position:relative;min-height:330px}
+#duo .hz{animation:drift 26s ease-in-out infinite alternate}@keyframes drift{from{transform:translateX(-4%)}to{transform:translateX(4%)}}.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+input[type=range]{padding:0;border:0;background:none;accent-color:var(--coral);min-height:44px}
+.weekline{display:flex;justify-content:space-between;font-size:14px;color:#b9cfcc}
+ul.ck{list-style:none;padding:0;margin:0}ul.ck li{padding:7px 0 7px 28px;position:relative;border-bottom:1px dashed var(--line)}
+ul.ck li::before{content:"";position:absolute;left:4px;top:14px;width:11px;height:11px;border-radius:50%;border:2px solid var(--coral)}
+.dark ul.ck li{border-color:#2c4a4d}
+details{border:1px solid var(--line);border-radius:16px;background:var(--card);margin:10px 0}
+summary{cursor:pointer;padding:16px 20px;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:12px;min-height:44px}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";font-size:24px;line-height:1;color:var(--coral)}details[open] summary::after{content:"–"}
+details>div{padding:0 20px 16px}
+.warn{background:var(--warnbg);border:2px solid var(--warn);border-radius:16px;padding:16px 20px;margin:14px 0;color:var(--ink)}
+.warn>strong:first-child{color:var(--warn)}
+.tip{border-left:4px solid var(--coral);padding:10px 14px;margin:12px 0;background:var(--tint);border-radius:0 12px 12px 0}
+.region{border:1.5px dashed var(--pine);border-radius:14px;padding:12px 16px;margin:12px 0}
+.region b.tag{color:var(--pine)}
+.say{font-family:Newsreader,serif;font-size:19px;font-style:italic}
+table{border-collapse:collapse;width:100%;font-size:15.5px}th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.yes{color:var(--pine);font-weight:700}.mixed{color:var(--coral);font-weight:700}
+.pricebox{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}.price{font-family:Newsreader,serif;font-size:30px;white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.chips button{background:var(--card);color:var(--ink);border:1.5px solid var(--line);font-size:15px;padding:8px 14px}
+.chips button[aria-pressed=true]{background:var(--pine);color:var(--bg);border-color:var(--pine)}
+.opt{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin:6px 0;cursor:pointer}
+.opt input{width:22px;height:22px;min-height:0;flex:none;margin-top:3px;accent-color:var(--coral)}
+pre.out{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px;font:15px/1.55 "Atkinson Hyperlegible",sans-serif;max-height:520px;overflow:auto}
+.stats{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.stats b{display:block;font-family:Newsreader,serif;font-size:clamp(34px,5vw,46px);line-height:1;color:var(--coral)}
+.timer{font-family:Newsreader,serif;font-size:clamp(42px,8vw,60px);font-variant-numeric:tabular-nums}
+.scroll{overflow-x:auto}
+.course{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:28px;align-items:start}
+#cList{display:flex;flex-direction:column;gap:6px;position:sticky;top:120px}
+.ls{all:unset;box-sizing:border-box;display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:14px;cursor:pointer;min-height:44px;border:1px solid transparent}
+.ls:hover{background:var(--tint)}.ls.on{background:var(--card);border-color:var(--pine)}.ls:focus-visible{outline:3px solid var(--coral)}
+.ls .dot{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;border:2px solid var(--pine);color:var(--pine)}
+.ls .dot.ok{background:var(--pine);color:var(--bg)}
+#cLesson{scroll-margin-top:130px}
+button[disabled]{opacity:.4;cursor:default}
+@media(max-width:860px){.course{grid-template-columns:minmax(0,1fr)}#cList{flex-direction:row;overflow-x:auto;position:static;padding-bottom:6px}.ls{flex:none;max-width:200px}}
+.searchBtn{flex:1;max-width:460px;min-width:44px;background:var(--card);color:var(--soft);border:1.5px solid var(--line);font-weight:400;justify-content:flex-start;border-radius:999px}
+.searchBtn:hover{border-color:var(--pine)}
+@media(max-width:700px){.sbLabel{display:none}.searchBtn{flex:0 0 44px;padding:0;justify-content:center;color:var(--ink)}.bar{flex-wrap:nowrap}.brand{margin-right:auto}}
+dialog.sheet{max-width:min(640px,96vw);width:100%;margin-top:6vh}
+.sres{list-style:none;padding:0;margin:12px 0}
+.sres a{display:block;padding:12px 14px;border-radius:12px;text-decoration:none;color:var(--ink);border:1px solid var(--line);margin-bottom:8px}
+.sres a:hover,.sres a:focus-visible{border-color:var(--pine);background:var(--tint)}
+.sres b{display:block}.sres span{font-size:14px;color:var(--soft)}
+.mgroups{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))}
+.mgroups h3{font-size:15px;font-family:"Atkinson Hyperlegible",sans-serif;color:var(--soft);margin:0 0 6px}
+.mgroups a{display:block;padding:9px 0;font-weight:700;text-decoration:none;color:var(--ink);min-height:40px}
+.mgroups a:hover{color:var(--coral)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0 14px}
+.btn.big{font-size:18px;padding:14px 22px;min-height:52px}
+.btn.coral{background:var(--coral);color:#fff}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin:6px 0 18px;padding:0;list-style:none;font-size:14.5px;color:#cfe0dd}
+.trust li::before{content:"✓ ";color:#ffb19e;font-weight:700}
+.rbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;border:1.5px dashed var(--pine);border-radius:14px;padding:10px 14px;margin:0 0 18px;font-size:15.5px}
+.dark .rbar{border-color:#6fa8a2}
+.sixty{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--pine);border-radius:14px;padding:16px 20px;margin:6px 0 22px}
+.sixty h2{font-size:20px;font-family:"Atkinson Hyperlegible",sans-serif;margin:0 0 6px}
+.sixty ol{margin:0;padding-left:20px}.sixty li{margin:4px 0}
+.about{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:center}@media(max-width:600px){.about{grid-template-columns:minmax(0,1fr)}}
+.mono{width:84px;height:84px;border-radius:50%;background:var(--pine);color:var(--bg);display:grid;place-items:center;font-family:Newsreader,serif;font-size:34px;font-weight:600}
+.flash{animation:fl 1.6s ease-out}@keyframes fl{from{box-shadow:0 0 0 4px var(--coral)}to{box-shadow:0 0 0 0 transparent}}
+footer .fcols{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));margin-bottom:18px}
+footer .fcols a{display:block;padding:4px 0;color:var(--ink);text-decoration:none}footer .fcols a:hover{color:var(--coral)}
+footer h3{font-size:15px;font-family:"Atkinson Hyperlegible",sans-serif;color:var(--soft);margin:0 0 6px}
+[data-view]{display:none}[data-view].on{display:block}
+dialog{border:0;border-radius:22px;padding:0;max-width:min(560px,94vw);background:var(--bg);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.4)}
+dialog::backdrop{background:rgba(5,20,22,.6)}dialog .in{padding:26px}
+footer{font-size:14.5px;color:var(--soft)}
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:28px}
+@media(max-width:600px){table{font-size:13.5px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:8em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7.5em;margin-inline-start:-8em;white-space:normal;font-weight:700}.stack td:empty{display:none}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+<script>try{var _h=parent.location.hash;if(_h&&_h.length>1&&!location.hash)location.hash=_h;addEventListener("hashchange",function(){try{parent.history.replaceState(null,"",location.hash)}catch(e){}})}catch(e){}</script>
+</head>
+<body>
+
+<dialog id="regionDlg" aria-labelledby="rdT">
+  <form class="in" id="regionForm" method="dialog">
+    <h2 id="rdT">Where will your baby be born?</h2>
+    <p>Laws, hospital routines, leave and even naming rules change from place to place. Choose yours and everything here will match it. You can change it any time.</p>
+    <label for="selC">Country</label><select id="selC"></select>
+    <div id="subWrap"><label for="selS" id="subL">State</label><select id="selS"></select></div>
+    <p class="note" style="margin-top:14px">This site is peer education from a fellow father, not medical, legal or mental-health advice. <a href="#terms">Read the terms</a>.<input type="checkbox" id="agree" hidden></p>
+    <p class="note" id="rdErr" aria-live="polite"></p>
+    <p><button type="submit">Show my guide</button></p>
+  </form>
+</dialog>
+
+<dialog id="helpDlg" aria-labelledby="hT">
+  <div class="in">
+    <h2 id="hT">Help right now</h2>
+    <p><b>If she or the baby is in danger</b>, call <b class="emNum">911</b> or go to the nearest emergency department. Say she is pregnant or gave birth in the last year.</p>
+    <p id="helpLines"></p>
+    <p><b>If you're struggling:</b> feeling low, angry, numb or scared is common for new dads, and help works. If you ever have thoughts of harming yourself or anyone else, call your emergency number or a crisis line now.</p>
+    <p><button type="button" id="helpClose">Close</button></p>
+  </div>
+</dialog>
+
+<dialog id="searchDlg" aria-labelledby="sT" class="sheet">
+  <div class="in">
+    <h2 id="sT" style="font-size:26px">Find help fast</h2>
+    <label for="sq" class="note" style="font-weight:400">Describe what's going on, in your own words</label>
+    <input id="sq" type="search" autocomplete="off" placeholder="e.g. waters broke, she's crying, breast pump, tongue tie">
+    <ul id="sRes" class="sres" aria-live="polite"></ul>
+    <p class="note">If anyone is in danger, don't search: <a href="#" id="sHelp">get help now</a>.</p>
+    <p><button type="button" class="ghost" id="sClose">Close</button></p>
+  </div>
+</dialog>
+<dialog id="menuDlg" aria-labelledby="mT" class="sheet">
+  <div class="in">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><h2 id="mT" style="font-size:26px;margin:0">All topics</h2><button type="button" class="ghost" id="mClose">Close</button></div>
+    <p style="margin:14px 0"><button type="button" class="pill" id="regionPill">Choose your state or country</button></p>
+    <div id="menuGroups" class="mgroups"></div>
+  </div>
+</dialog>
+
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="#home" aria-label="Steady, home">Steady</a>
+    <button type="button" class="searchBtn" id="searchBtn" aria-label="Search the site"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span class="sbLabel">Search: "waters broke", "pump"…</span></button>
+    <div class="right">
+      <button type="button" class="help" id="helpBtn">Help now</button>
+      <button type="button" class="pill" id="menuBtn" aria-haspopup="dialog">Menu</button>
+    </div>
+  </div>
+  <nav class="sec" aria-label="Main topics" id="secNav"></nav>
+</header>
+
+<main>
+<!-- HOME -->
+<section data-view="home">
+  <div class="band dark">
+    <div class="wrap two" style="align-items:center">
+      <div>
+        <p class="note">For expecting fathers · by <a href="#about">Nabil Rahman</a>, dad of two</p>
+        <h1>You don't have to figure this out alone</h1>
+        <p>A free, step-by-step course for dads, from the day you find out to three months after the birth. Know what to do each month, what she needs, what the hospital won't tell you, and your rights. And when you want a real person, there's a dad to talk to.</p>
+        <div class="cta"><a class="btn big coral" href="#course">Start the free course</a><a class="btn big ghost" href="#coaching">Talk to Nabil</a></div>
+        <ul class="trust"><li>Free, no sign-up</li><li>Every claim sourced</li><li>Reviewed Nov 2026</li><li>No ads</li></ul>
+        <div class="rbar" id="rbarHome"></div>
+        <label for="wk" style="margin-top:4px">See your week: week <span id="wkLbl">20</span></label>
+        <input type="range" id="wk" min="4" max="52" value="20" aria-describedby="wkHint">
+        <div class="weekline" id="wkHint"><span>4</span><span>Birth ≈ 40</span><span>3 months after</span></div>
+      </div>
+      <figure class="card" style="padding:0;overflow:hidden;margin:0;background:#0b1719;border-color:#2c4a4d"><div class="fig" style="min-height:420px"><svg id="duo" role="img" aria-labelledby="duoT"><title id="duoT">A pregnant woman and her partner in profile, standing in colored light; her belly grows, his hand reaches toward it, and his own belly grows a little, week by week</title></svg></div><figcaption id="duoCap" style="padding:14px 18px;color:#e7efed;font-size:15.5px"></figcaption></figure>
+    </div>
+  </div>
+  <div class="band"><div class="wrap">
+    <h2 id="wkTitle">This week</h2>
+    <div class="grid" id="wkCards"></div>
+    <p class="note" style="margin-top:12px">Every pregnancy is different. These are typical patterns, not rules; her care team knows her situation.</p>
+  </div></div>
+  <div class="band" style="background:var(--tint)"><div class="wrap">
+    <h2>What the research says about dads</h2>
+    <div class="stats">
+      <div><b>~1 in 10</b>fathers have depression during pregnancy or the first year (meta-analyzes put it around 8–10%).</div>
+      <div><b>~11%</b>of fathers have significant anxiety in the perinatal period, in a review of 40,000+ dads.</div>
+      <div><b>3×</b>higher odds of anxiety for a dad when his partner is depressed. You affect each other, for better too.</div>
+      <div><b>↓ T, ↑ prolactin</b>Hands-on dads see testosterone fall and bonding hormones rise. Your body is getting ready too.</div>
+    </div>
+    <p class="note" style="margin-top:14px">Sources: J Affect Disord 2016 and 2020; J Psychosom Obstet Gynaecol 2021; JAMA Netw Open 2022; Gettler et al. 2011. Full list in <a href="#terms">Sources &amp; terms</a>.</p>
+  </div></div>
+  <div class="band" id="about"><div class="wrap">
+    <div class="card about"><div id="aboutPic"><div class="mono" aria-hidden="true">NR</div></div><div>
+      <h2 style="font-size:28px">Who's behind this</h2>
+      <p>I'm Nabil Rahman, father of two daughters. Before this, I spent years as a journalist: an editor at CBS News and a multimedia producer for National Geographic, where the job was turning complicated, high-stakes information into something people can trust and use. I've brought the same standard here: every fact on this site links to its source.</p>
+      <p id="reviewLine" class="note" hidden></p>
+      <p class="note" style="margin:0">I'm not a doctor, midwife or therapist; I'm a dad who's been through it and does the homework. For medical decisions, always follow her care team. <a href="#terms">How this site is made</a></p>
+    </div></div>
+  </div></div>
+  <div class="band" id="tBand" hidden><div class="wrap">
+    <h2>From dads who've used it</h2>
+    <div class="grid" id="tList"></div>
+    <p class="note" style="margin-top:10px">Shared with permission. Names shortened for privacy.</p>
+  </div></div>
+  <div class="band" style="background:var(--tint)" id="news"><div class="wrap two" style="align-items:center">
+    <div>
+      <h2>One email a month: this month's lesson</h2>
+      <p>Tell us your due date and you'll get the right lesson at the right time: what to do now, and what's coming next. No spam, no selling your address, unsubscribe any time.</p>
+    </div>
+    <form class="card" id="newsForm" onsubmit="return false">
+      <label for="nName">First name</label><input id="nName" autocomplete="given-name">
+      <label for="nEmail">Email</label><input id="nEmail" type="email" autocomplete="email" inputmode="email">
+      <label for="nDue">Due date (optional)</label><input id="nDue" type="date">
+      <p style="margin-top:14px"><button type="button" id="nBtn">Send me this month's lesson</button></p>
+      <div id="nOut" aria-live="polite" class="note"></div>
+    </form>
+  </div></div>
+  <div class="band"><div class="wrap">
+    <h2>Start anywhere</h2>
+    <div class="grid" id="homeCards"></div>
+  </div></div>
+</section>
+
+<!-- COURSE -->
+<section data-view="course"><div class="band"><div class="wrap">
+  <h1>The course: from "we're pregnant" to three months in</h1>
+  <p>Fourteen short lessons, one for each stage. Each tells you what's happening, what to do this month, what to say, and what's coming next, so you're always one step ahead. Start easy at Month 0 and build up. Your progress saves in this browser.</p>
+  <div class="grid" style="align-items:end;margin:10px 0 18px">
+    <div><label for="courseDue">Your due date (optional): we'll open the right lesson</label><input type="date" id="courseDue"><p class="note" id="dueMsg" aria-live="polite"></p></div>
+    <div><p class="note" id="cProgT" style="margin:0 0 6px"></p><div style="height:10px;border-radius:99px;background:var(--line);overflow:hidden"><div id="cProg" style="height:100%;width:0;background:var(--coral);transition:width .4s"></div></div></div>
+  </div>
+  <div class="course">
+    <nav id="cList" aria-label="Lessons"></nav>
+    <article id="cLesson" aria-live="polite"></article>
+  </div>
+  <div class="tip" style="margin-top:26px">Want each lesson to arrive right on time? <a href="#home" data-news="1">Get one email a month</a>.</div>
+  <details style="margin-top:20px"><summary>Quick reference: her, you and warning signs at every stage</summary><div id="stages"></div></details>
+</div></div></section>
+
+<!-- BIRTH DAY -->
+<section data-view="birthday"><div class="band"><div class="wrap">
+  <h1>Birth day: your jobs, minute by minute</h1>
+  <div class="sixty"><h2>In 60 seconds</h2><ol><li>Call when her provider's rule is met (often 5-1-1). Go in <b>now</b> for bleeding, fluid that's green or brown, less movement, constant pain, or before 37 weeks.</li><li>Your job: protect her calm, handle logistics, speak for her plan, stay with her.</li><li>For any non-urgent decision ask: benefits, risks, alternatives, and what if we wait?</li><li>If she can't do skin-to-skin, ask to do it yourself.</li></ol></div>
+  <p>Your role on the day is simple to say and hard to do: <b>protect her calm, carry the logistics, speak up for what she wants, and stay with her.</b> You don't need to know medicine. You need to know the plan, the route, and when to call.</p>
+  <div class="two">
+    <div>
+      <h2>When to go in</h2>
+      <p>A common rule is <b>5-1-1</b>: contractions about every 5 minutes, each lasting about 1 minute, for 1 hour. Some providers use 4-1-1 or 3-1-1, and want you in sooner for a second baby because labor is often faster. <b>Ask her provider which rule they want, and write it in your plan.</b></p>
+      <div class="warn"><strong>Go in now, whatever the contractions are doing,</strong> if her waters break (especially green, brown or smelly fluid), she's bleeding, the baby is moving less, she has constant severe pain, she's under 37 weeks, or her gut says go.</div>
+      <p class="region" id="bdRegion"></p>
+    </div>
+    <div class="card">
+      <h3>Contraction timer</h3>
+      <div class="timer" id="ctClock">0:00</div>
+      <p><button type="button" id="ctBtn">Contraction started</button> <button type="button" class="ghost" id="ctReset">Clear</button></p>
+      <p id="ctSum" class="note" aria-live="polite">Tap when a contraction starts and again when it ends.</p>
+      <table><thead><tr><th>Started</th><th>Length</th><th>Apart</th></tr></thead><tbody id="ctRows"></tbody></table>
+    </div>
+  </div>
+  <h2 style="margin-top:28px">Your jobs at each stage</h2>
+  <div class="grid" id="bdJobs"></div>
+  <h2 style="margin-top:28px">How to handle every situation</h2>
+  <p>Open the one that's happening. Each gives you what's going on, what to do, and what to say.</p>
+  <div id="scen"></div>
+</div></div></section>
+
+<!-- HOSPITAL -->
+<section data-view="hospital"><div class="band"><div class="wrap">
+  <h1>The hospital stay: who knocks, and can you say no?</h1>
+  <div class="rbar"></div>
+  <div class="sixty"><h2>In 60 seconds</h2><ol><li>Expect checks every few hours, a pediatrician visit, a lactation consultant, and paperwork.</li><li>You can always decline sales visits and the photographer.</li><li>Most medical tests can be refused only by signing a form; ask what each is for first.</li><li>Write down the after-hours number and the first pediatrician appointment before you leave.</li></ol></div>
+  <p>The first one to three days are a parade of visitors, tests and forms, usually at 2 a.m. Knowing who's coming and why takes most of the stress out. In general, <b>parents can decline or delay non-medical services, and can ask questions about, delay, and in most places refuse medical procedures</b>, though some are required by law and refusing may mean signing a form.</p>
+  <div class="tip">Your two magic sentences: <span class="say">"Can you tell me what this is for and what happens if we wait?"</span> and <span class="say">"We'd like a few minutes to talk about it."</span> Unless it's an emergency, both are always fine.</div>
+  <div class="scroll"><table class="stack"><thead><tr><th>Who or what</th><th>What it is</th><th>Can you decline?</th></tr></thead><tbody id="hospRows"></tbody></table></div>
+  <p class="region" id="hospRegion"></p>
+  <h2 style="margin-top:28px">Things nobody warns you about</h2>
+  <div class="grid" id="surprises"></div>
+</div></div></section>
+
+<!-- RIGHTS -->
+<section data-view="rights"><div class="band"><div class="wrap">
+  <h1>Know your rights</h1>
+  <div class="rbar"></div>
+  <div class="sixty"><h2>In 60 seconds</h2><ol><li>She decides about her body; you decide together for the baby.</li><li>Not married? You'll be offered a paternity form at the hospital. Read it before signing.</li><li>Check leave now: FMLA, your state's paid leave, and your employer's policy.</li><li>Add the baby to insurance quickly (often within 30 days).</li></ol></div>
+  <p>Not legal advice, just the map. Rules differ by state and country and change often, so check the official source for yours (see <a href="#terms">Sources &amp; terms</a>), and talk to a family-law attorney for anything complex.</p>
+  <div class="grid" id="rightsCards"></div>
+  <h2 style="margin-top:30px" id="nameH">Naming your baby: what's legal</h2>
+  <div id="nameBox"></div>
+</div></div></section>
+
+<!-- YOU -->
+<section data-view="you"><div class="band"><div class="wrap">
+  <h1>Your body, your mind, your plate</h1>
+  <div class="sixty"><h2>In 60 seconds</h2><ol><li>Weight gain and sympathy symptoms in dads are real and common.</li><li>About 1 in 10 dads get depressed; in men it often looks like anger, withdrawal or numbing out.</li><li>Two weeks of feeling bad is the signal to reach out.</li><li>Batch-cook before the birth; protein, fiber and water at every meal.</li></ol></div>
+  <div class="two">
+    <div>
+      <h2>Yes, dads get a belly too</h2>
+      <p>Many expectant fathers gain weight during the pregnancy, and the weight tends to stay: one study found fathers weigh on average about 14 pounds (6 kg) more than childless men. Some of it is shared snacks and takeout; some is lost sleep, which reliably drives weight gain; and researchers have wondered if part of it is biological, since expectant marmoset and tamarin fathers gain weight too.</p>
+      <p>Some men develop <b>couvade syndrome</b> ("sympathetic pregnancy"): nausea, heartburn, back ache, appetite changes and poor sleep. A 2024 study linked bigger shifts in men's prolactin and testosterone to more of these symptoms. It's real, it's not weakness, and it passes.</p>
+      <h2>Your hormones change</h2>
+      <p>New fathers who do hands-on care show falling testosterone and rising prolactin and oxytocin. Studies also find the brains of involved fathers change after the birth, linked to empathy and attention to the baby. The more you hold, feed and soothe, the stronger it gets.</p>
+    </div>
+    <div>
+      <h2>Your mental health</h2>
+      <p>About one in ten fathers gets depressed in pregnancy or the first year, and about one in ten has serious anxiety. In men it often looks different: <b>irritability, anger, working late, numbing out with screens or drink, withdrawing, physical aches</b>, rather than sadness.</p>
+      <div class="warn"><strong>Get help if</strong> any of that lasts more than two weeks, you feel hopeless, you're drinking more, you feel like running, or you have any thought of harming yourself or the baby. That's not failing; it's your cue to reach out. <span id="mhLine"></span> I can also <a href="#coaching">set up a session with a licensed therapist</a>.</div>
+      <h3>A 3-minute reset for heightened moments</h3>
+      <ul class="ck"><li><b>Box breathing:</b> in 4, hold 4, out 4, hold 4. Four rounds.</li><li><b>Name it:</b> "I'm scared because I can't fix this." Naming a feeling calms it.</li><li><b>Shrink the job:</b> "What's the next one thing?" Water, a cold cloth, a question.</li><li><b>Step out, come back:</b> 60 seconds in the hall is fine. Tell her you'll be right back.</li></ul>
+    </div>
+  </div>
+  <h2 style="margin-top:28px">Meal plan for dads (and the whole house)</h2>
+  <p>The goal isn't dieting. It's keeping your energy steady through broken sleep and keeping her fed, especially if she's breastfeeding and hungry around the clock. Batch-cook in the third trimester; aim for protein, fiber and water at every meal; keep one-hand snacks where you feed the baby; and go easy on alcohol, which wrecks the little sleep you get.</p>
+  <div class="scroll"><table class="stack" id="mealT"><thead><tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner (cook double)</th><th>One-hand snack</th></tr></thead><tbody></tbody></table></div>
+  <div class="grid" style="margin-top:18px">
+    <div class="card"><h3>Freezer list to make by week 36</h3><ul class="ck"><li>Chilli or dal, in single portions</li><li>Soup (lentil, chicken, vegetable)</li><li>Breakfast burritos, wrapped</li><li>Baked oat bars or lactation-style cookies</li><li>Meatballs or bean patties</li><li>A big sheet-pan bake (lasagne or biryani)</li></ul></div>
+    <div class="card"><h3>Feeding her after the birth</h3><ul class="ck"><li>A full water bottle every time she sits to feed</li><li>Warm, soft foods: soups, stews, porridge</li><li>Iron-rich foods if she lost a lot of blood</li><li>Fibre and fluids: constipation after birth is common</li><li>Ask her care team about any foods to avoid, and her own cultural traditions</li></ul></div>
+    <div class="card"><h3>Move a little</h3><p>Twenty minutes walking with the stroller counts. So does ten push-ups while the bottle warms. Small and daily beats heroic and rare.</p></div>
+  </div>
+</div></div></section>
+
+<!-- WATCH -->
+<section data-view="watch"><div class="band"><div class="wrap">
+  <h1>Eyes open: what uninformed parents get caught by</h1>
+  <div class="sixty"><h2>In 60 seconds</h2><ol><li>Ask before the birth whether the hospital drug tests, with consent, and who sees results.</li><li>Ask for the financial assistance policy; many eligible families are never told.</li><li>You never have to sign away surprise-billing protections; ask for itemized bills.</li><li>You can say no to marketing bags and sales visits; if you're not heard, ask for the patient advocate.</li></ol></div>
+  <p>Most nurses and doctors are kind, overworked people doing their best. But hospitals are also businesses and institutions with routines, and reporters and researchers have documented practices that hurt families who don't know their rights. Here are five, each with published sources. Tap <b>Add to my consultation</b> on any you want to talk through, and we'll go deeper, including others I've seen myself.</p>
+  <p class="region" id="watchRegion"></p>
+  <div id="watchList"></div>
+  <div class="card" style="margin-top:18px;border:2px dashed var(--pine)"><h3>More we'll cover together</h3><p>There are more patterns I talk about in consultations, from my own experience and other dads'. Bring your hospital's name and your plan, and we'll go through what to watch for there.</p><p><a class="btn" href="#coaching">Book a consultation</a></p></div>
+  <p class="note" style="margin-top:14px">These summaries describe documented patterns, not any particular hospital or person. Laws and policies vary by state and change; for legal problems, talk to a licensed attorney. Sources are listed under each item and in <a href="#terms">Sources &amp; terms</a>.</p>
+</div></div></section>
+
+<!-- BAG -->
+<section data-view="bag"><div class="band"><div class="wrap">
+  <h1>Packing for delivery day</h1>
+  <p>Pack by about 36 weeks and leave it by the door with the car seat already installed. Tap items to tick them; it's saved in this browser.</p>
+  <div class="grid" id="bags"></div>
+</div></div></section>
+
+<!-- PLAN -->
+<section data-view="plan"><div class="band"><div class="wrap">
+  <h1>Build your birth plan together</h1>
+  <p>Her body, her choices: the plan is hers, and your job is to know it so well you can speak for her when she can't. Fill this in together, then take it to her 36-week visit. It also covers your role, who to call, and your visitor rules, which is where most dads earn their keep.</p>
+  <div class="two">
+    <form id="planForm" class="card" onsubmit="return false">
+      <label for="pHer">Her name</label><input id="pHer">
+      <label for="pYou">Your name and role</label><input id="pYou" placeholder="e.g. Sam, partner">
+      <label for="pPlace">Where we plan to give birth</label><input id="pPlace">
+      <label for="pCare">Doctor or midwife</label><input id="pCare">
+      <label for="pRule">When our provider wants us to come in</label><input id="pRule" placeholder="e.g. 4-1-1, or when waters break">
+      <label for="pHealth">Health notes</label><textarea id="pHealth" rows="2" placeholder="Allergies, conditions, GBS status, past births"></textarea>
+      <div id="planOpts"></div>
+      <label for="pCall">Who to call, in order</label><textarea id="pCall" rows="2" placeholder="Her mom after the birth; my brother for the dog"></textarea>
+      <label for="pExtra">Anything else (faith, culture, language, fears)</label><textarea id="pExtra" rows="2"></textarea>
+    </form>
+    <div>
+      <div class="card"><h3>Your plan</h3><pre class="out" id="planOut" aria-live="polite"></pre>
+      <p style="margin-top:12px"><button type="button" id="copyPlan">Copy plan</button> <a class="btn ghost" href="#coaching">Go over it with me</a></p><p class="note" id="copyMsg" aria-live="polite"></p></div>
+      <div class="tip">Print two copies: one in the bag, one for the nurse at check-in. Keep it to a page; nurses read short plans.</div>
+    </div>
+  </div>
+</div></div></section>
+
+<!-- GEAR -->
+<section data-view="gear"><div class="band"><div class="wrap">
+  <h1>Lifesavers, and the stuff that gathers dust</h1>
+  <p>After two babies, here's my honest list. The essentials are fewer than the internet says, and a few popular products aren't safe for sleep at all.</p>
+  <div class="grid">
+    <div class="card"><h3>Absolute lifesavers</h3><ul class="ck" id="lifeL"></ul></div>
+    <div class="card"><h3>Barely used</h3><ul class="ck" id="dustL"></ul></div>
+  </div>
+  <div class="warn"><strong>Never for sleep:</strong> inclined sleepers (more than 10°), crib bumpers, weighted swaddles, sleep sacks or blankets, positioners, nests and pods, pillows and loose bedding. Car seats, swings, bouncers and nursing pillows aren't for sleep either. The American Academy of Pediatrics says: on the back, on a flat firm surface, nothing else in the crib, in your room for at least the first six months, and never asleep with baby on a sofa or armchair.</div>
+  <h2 style="margin-top:24px">Baby registry</h2>
+  <p>A registry lets family buy what you actually need for the shower. The completion discount on whatever's left near the due date is usually the best perk.</p>
+  <div class="grid" id="regList"></div>
+  <p class="note" style="margin-top:10px">Perks and terms change; check each site before signing up.</p>
+</div></div></section>
+
+<!-- SHOP -->
+<section data-view="shop"><div class="band"><div class="wrap">
+  <h1>The dad shop</h1>
+  <p>Only the lifesavers, linked to the store for <span class="rName">your region</span>. Buy car seats and sleep products new (or from someone who can vouch for their history), and check they meet your country's safety standard.</p>
+  <div class="chips" id="shopCats" role="group" aria-label="Filter"></div>
+  <div class="grid" id="shopGrid"></div>
+  <p class="note" style="margin-top:14px">Affiliate disclosure: links in this shop are affiliate links. If you buy through them I may earn a small commission at no extra cost to you. As an Amazon Associate I earn from qualifying purchases. I list only things I'd tell a friend about, and I'm not paid to include any product.</p>
+</div></div></section>
+
+<!-- TRADITIONS -->
+<section data-view="traditions"><div class="band"><div class="wrap">
+  <h1>What fathers have done, across the world and through history</h1>
+  <p>Modern dads often feel they have no role and no ritual. But fathers have always had both. Here's what other cultures and eras did, and what we can borrow.</p>
+  <div class="grid" id="trad"></div>
+  <p class="note" style="margin-top:14px">Traditions vary within every culture and family; these are broad descriptions, not rules. Ask your elders what yours did.</p>
+</div></div></section>
+
+<!-- COACHING -->
+<section data-view="coaching"><div class="band"><div class="wrap">
+  <h1>Coaching with me, all the way through</h1>
+  <div class="two">
+    <div>
+      <div id="coachPic" style="margin-bottom:14px"></div>
+      <p>I'm Nabil, a father of two daughters. I've sat in the triage room at 3 a.m., timed contractions in the car, watched the team move fast when things changed, and paced the hallway in week two wondering if I was doing any of it right. I'm not a doctor, therapist or doula. I'm the friend who's been through it recently and will make sure you're not doing it alone.</p>
+      <p>You choose how close you want me: monthly meetings, weekly check-ins, or WhatsApp at any hour. You bring what's on your mind: fears, frustrations, family pressure, money, work, the relationship, the birth plan. I bring tools, resources, questions for your care team, and an honest ear. What you share stays between us, except where someone's safety is at risk.</p>
+    </div>
+    <div>
+      <h2 style="margin-top:0">Choose how close you want me</h2>
+      <p>Every plan runs from the day you join until three months after the birth. Start with the basics and move up any time; the price grows only with how much of me you want on call.</p>
+    </div>
+  </div>
+  <div class="grid" id="tiers" style="margin-top:8px"></div>
+  <h2 style="margin-top:34px">What each plan includes</h2>
+  <div class="scroll"><table id="tierT"><thead><tr><th>Included</th><th>Steady<br><span class="note">monthly</span></th><th>Closer<br><span class="note">weekly</span></th><th>Always there<br><span class="note">24/7</span></th></tr></thead><tbody></tbody></table></div>
+  <div class="grid" style="margin-top:20px;align-items:start">
+    <div class="card" style="border:2px solid var(--coral)"><div class="pricebox"><h3>Intro call</h3><span class="price">Free</span></div><p>15 minutes to meet, tell me where you are, and see if we're a fit. No obligation.</p><a class="btn coral" href="#coachForm" data-intro="1">Book a free intro</a></div>
+    <div class="card"><div class="pricebox"><h3>One session</h3><span class="price">$30</span></div><p>45 minutes, no plan needed. Good for a first talk or a hard week.</p></div>
+    <div class="card"><div class="pricebox"><h3>Birth plan review</h3><span class="price">$30</span></div><p>Line by line through your plan from this site, with questions ready for the 36-week visit. Included in every monthly plan.</p></div>
+    <div class="card"><div class="pricebox"><h3>Scholarship</h3><span class="price">Free</span></div><p>Money should never be why a dad goes through this alone. Write and tell me a bit about your situation. No proof needed.</p></div>
+    <div class="card" style="border:2px solid var(--pine)"><div class="pricebox"><h3>Licensed therapist</h3><span class="price" style="font-size:22px">As needed</span></div><p>If you're dealing with more than coaching can hold (depression, anxiety, a frightening birth, a loss, a relationship in crisis), I can schedule you with a licensed therapist from the teams I work with, for you, for her, or both. These cost more and are priced by the therapist; you'll know the fee before booking. Until then, I'm with you every step of the way.</p></div>
+  </div>
+  <div class="card" style="margin-top:24px;background:var(--tint)"><h3>Be one of the founding dads</h3><p style="margin:0">Steady is new. The first dads who join help shape it: your questions become new lessons, and your honest feedback (if you're willing) helps the next dad decide. Founding dads keep their starting price for as long as they stay.</p></div>
+  <div class="grid" id="tList2" style="margin-top:18px"></div>
+  <h2 style="margin-top:30px">Questions dads ask first</h2>
+  <details><summary>Is this therapy?</summary><div><p>No. Coaching is peer support from a dad who's been through it, with practical tools and an honest ear. If you need therapy, I'll connect you with a licensed therapist.</p></div></details>
+  <details><summary>Can my partner join?</summary><div><p>Yes, any time. Many sessions work best with both of you, especially for the birth plan.</p></div></details>
+  <details><summary>Can I change or stop my plan?</summary><div><p>Plans are month to month. Move up, move down, or stop whenever you like.</p></div></details>
+  <details><summary>Is what I share private?</summary><div><p>Yes. I don't share what you tell me, except where someone's safety is at serious risk or the law requires it.</p></div></details>
+  <details><summary>Have you already used Steady?</summary><div><p>I'd love one honest sentence about how it helped (or didn't). With your permission, I may share it here with your first name and city only. <a href="#coachForm" data-story="1">Share your story</a></p></div></details>
+  <details><summary>I'm not in the US. Can I still join?</summary><div><p>Yes. Sessions are on video or WhatsApp. I'll be honest when local rules differ from what I know, and point you to the right local source.</p></div></details>
+  <div class="tip">When might I suggest a therapist? If low mood, anger, panic or numbness lasts more than two weeks; if sleep, work or the relationship are falling apart; after a frightening birth, NICU stay or loss; or whenever you ask. It's a strength, not a failure.</div>
+  <div class="warn"><strong>Not a crisis service.</strong> Coaching and scheduled therapy can't respond in an emergency. If anyone is in danger or you have thoughts of harming yourself or someone else, call your emergency number or a crisis line now (tap <b>Help now</b> at the top).</div>
+  <form class="card" id="coachForm" style="margin-top:22px;max-width:820px" onsubmit="return false">
+    <h3>Pre-write what you want to talk about</h3>
+    <p class="note">Writing it down helps, even if you never send it. Your draft stays in this browser.</p>
+    <div class="grid" style="gap:0 18px"><div><label for="cName">Your name</label><input id="cName" autocomplete="name"></div><div><label for="cDue">Due date</label><input id="cDue" type="date"></div></div>
+    <label for="cWhat">I'd like</label><select id="cWhat"><option>Free 15-minute intro call</option><option>Steady: monthly meetings ($39/mo)</option><option>Closer: weekly check-ins ($89/mo)</option><option>Always there: 24/7 WhatsApp ($179/mo, 5 places)</option><option>One session ($30)</option><option>Birth plan review ($30)</option><option>A session with a licensed therapist</option><option>A scholarship</option></select>
+    <label>What's on your mind (tick any)</label><div class="chips" id="topics" role="group" aria-label="Topics"></div>
+    <label for="cMsg">In your own words</label><textarea id="cMsg" rows="5" placeholder="What I'm worried about… what I'm frustrated by… what I want to get right…"></textarea>
+    <label class="opt"><input type="checkbox" id="cAgree"> <span>I understand coaching is peer support, not therapy, medical or legal advice, and in a crisis I'll call emergency services or a crisis line.</span></label>
+    <p><button type="button" id="cBtn">Write my message</button></p>
+    <div id="cOut" aria-live="polite"></div>
+  </form>
+</div></div></section>
+
+<!-- TERMS -->
+<section data-view="terms"><div class="band"><div class="wrap">
+  <h1>Sources &amp; terms</h1>
+  <h2>How this site is made</h2>
+  <p id="termsReview"></p><p>Content is written by Nabil Rahman from personal experience and checked against public-health bodies, peer-reviewed research and official government pages. It was last reviewed in November 2026. If you spot something out of date, please tell me and I'll fix it.</p>
+  <h3>Main sources</h3>
+  <ul class="ck" id="srcList"></ul>
+  <h2 style="margin-top:26px">Disclaimer</h2>
+  <p><b>Peer education only.</b> Everything on this site and in coaching is general information and personal experience from a parent. It is not medical, nursing, midwifery, psychological, psychiatric, legal or financial advice, and it is not a substitute for professionals who know your situation.</p>
+  <p><b>Who I am, and am not.</b> Nabil Rahman is not a physician, midwife, nurse, doula, lactation consultant, licensed therapist, counsellor or attorney. Coaching is peer support and does not create a doctor-patient, therapist-client, attorney-client or any other professional relationship. It is not a crisis service.</p>
+  <p><b>Emergencies.</b> Never delay medical care or ignore professional advice because of anything here. If anyone is in danger, call your local emergency number straight away.</p>
+  <p><b>Laws and rules vary and change.</b> Information about laws, naming rules, leave, paternity, hospital procedures and insurance is a general summary that may be incomplete or out of date for your state, country or facility. Confirm it with the official agency, your hospital, your employer or a licensed attorney before relying on it.</p>
+  <p><b>Products and links.</b> Product mentions are personal suggestions, not endorsements or safety certifications. Follow the maker's instructions and check recalls for your country. Some links are affiliate links. Third-party sites are not under my control.</p>
+  <p><b>Licensed therapists.</b> Therapy sessions are provided by independent, licensed mental-health professionals, not by Nabil Rahman. The therapist is responsible for their own clinical care, licensing, fees, records and confidentiality, and you'll have a separate agreement with them. Telehealth therapists generally must be licensed in the state or country where you are during the session; ask any therapist to confirm their license for your location. Nabil Rahman only helps arrange the introduction and is not responsible for the therapist's services.</p>
+  <p><b>Confidentiality.</b> I keep what you share private, except where I believe someone is at risk of serious harm or the law requires otherwise.</p>
+  <p><b>No guarantees, limited liability.</b> No guide, plan or coaching can guarantee an outcome. To the fullest extent the law allows, Nabil Rahman is not liable for any loss, injury or damage arising from use of this site, its tools or any session. By using the site you agree to these terms.</p>
+</div></div></section>
+</main>
+
+<footer class="band" style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="fcols">
+    <div><h3>Prepare</h3><a href="#course">The course</a><a href="#bag">Bags</a><a href="#plan">Birth plan</a><a href="#gear">Gear</a><a href="#shop">Shop</a></div>
+    <div><h3>The birth</h3><a href="#birthday">Birth day</a><a href="#hospital">Hospital stay</a><a href="#watch">Watch for</a></div>
+    <div><h3>You</h3><a href="#rights">Your rights</a><a href="#you">Body &amp; mind</a><a href="#traditions">Traditions</a></div>
+    <div><h3>Talk to a person</h3><a href="#coaching">Coaching</a><a href="#coaching">Licensed therapists</a><span>nabilrahman.rubab@gmail.com</span><span>WhatsApp @nabilnow</span></div>
+  </div>
+  <p>Peer education from a father, not medical, legal or mental-health advice. In an emergency, call your local emergency number. <a href="#terms">Sources &amp; terms</a> · Last reviewed November 2026 · © 2026 Nabil Rahman · <a href="https://nabilrahman.com">nabilrahman.com</a></p>
+</div></footer>
+
+<script>
+{
+/* ===== SETTINGS: your affiliate tags and Stripe payment links ===== */
+const AFF={us:'',ca:'',uk:'',au:'',in:''};
+const PAY={steady:'',closer:'',always:'',single:'',plan:''};
+const ALWAYS_TOTAL=5,ALWAYS_LEFT=5;
+/* Fill these in as you get them; empty means the slot stays hidden. */
+const PHOTO='data:image/jpeg;base64,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';
+const REVIEWER=null;       // e.g. {name:'Jane Doe, CNM', role:'certified nurse-midwife', date:'Jan 2027'}
+const NEWSLETTER_URL='https://wondrous-speaker-8626.kit.com/ace486cf36';   // Kit signup page
+const TESTIMONIALS=[];     // e.g. [{q:'One honest sentence.', who:'Sam, first-time dad, Atlanta'}]  real dads only, with permission   // update ALWAYS_LEFT as dads join or finish
+const store=(k,v)=>{try{if(v===undefined)return JSON.parse(localStorage.getItem('st_'+k));localStorage.setItem('st_'+k,JSON.stringify(v))}catch(e){return null}};
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+const VIEWS=[['home','Home'],['course','The course'],['birthday','Birth day'],['hospital','Hospital stay'],['rights','Your rights'],['watch','Watch for'],['you','You'],['bag','Bags'],['plan','Birth plan'],['gear','Gear'],['shop','Shop'],['traditions','Traditions'],['coaching','Coaching'],['terms','Sources & terms']];
+const PRIMARY=['course','birthday','hospital','rights','you','coaching'];
+$('#secNav').innerHTML=VIEWS.filter(v=>PRIMARY.includes(v[0])).map(([k,t])=>`<a href="#${k}" data-k="${k}">${t}</a>`).join('')+`<a href="#" id="moreLink" data-k="_more">More topics</a>`;
+const GROUPS=[['Prepare',['course','bag','plan','gear','shop']],['The birth',['birthday','hospital','watch']],['Your rights & you',['rights','you','traditions']],['Support',['coaching','terms','home']]];
+$('#menuGroups').innerHTML=GROUPS.map(([g,ks])=>`<div><h3>${g}</h3>${ks.map(k=>`<a href="#${k}">${VIEWS.find(v=>v[0]===k)[1]}</a>`).join('')}</div>`).join('');
+
+/* ===== Regions ===== */
+const STATES=['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
+const PFML=['California','New York','New Jersey','Rhode Island','Washington','Massachusetts','Connecticut','Oregon','Colorado','Delaware','Maine','Minnesota','Virginia','District of Columbia','Maryland'];
+const NAME={
+ 'Alaska':'The state system accepts many accents and foreign characters (such as ë, é, ñ), though not all.',
+ 'Arizona':'141-character limit: 45 each for first, middle and last name and 6 for a suffix. Apostrophes, hyphens, periods and spaces are allowed.',
+ 'California':'Only the 26 letters of the English alphabet with normal punctuation, so no accents (José becomes Jose on the certificate). Obscene names are not allowed.',
+ 'Colorado':'No length limit, but the name must be typeable on a standard keyboard: no symbols or foreign characters.',
+ 'Connecticut':'If parents can\'t agree on a first name, none goes on the certificate until both sign an agreement or a court decides.',
+ 'Florida':'If parents can\'t agree, no name is listed until both sign or a court assigns one.',
+ 'Georgia':'No symbols, and that includes accent marks.',
+ 'Illinois':'No specific restrictions; the system can record numbers and symbols.',
+ 'Indiana':'If the mother is unmarried at birth, the baby takes her surname unless a paternity affidavit is signed.',
+ 'Massachusetts':'Up to 40 characters each for first, middle and last name.',
+ 'Minnesota':'No numbers or special symbols, except apostrophes and hyphens.',
+ 'New Jersey':'No obscene names, symbols or numbers.',
+ 'New York':'Up to 30 characters for first and middle names and 40 for the last name; no numbers or symbols.',
+ 'Ohio':'No numbers; hyphens, apostrophes and spaces are fine.',
+ 'South Carolina':'Reported to allow numbers and symbols; confirm with Vital Records.',
+ 'Texas':'Up to 100 characters per name, English alphabet only, no numbers or diacritical marks.',
+ 'Virginia':'No numbers, symbols or special characters, including umlauts and tildes.'
+};
+const STATE_EXTRA={
+ 'Georgia':'Georgia: signing the Voluntary Paternity Acknowledgment establishes you as the biological father, but under Georgia law it does not by itself give custody or visitation rights. Unmarried fathers can also sign a legitimation statement on the form if both parents agree, or petition the court. Georgia also does not license certified professional midwives, so home and birth-center options are limited.',
+ 'California':'California: an unmarried father can only be listed on the birth certificate by signing a Voluntary Declaration of Parentage.',
+ 'New York':'New York: the Acknowledgment of Paternity can only be used if the mother was not married at any time during the pregnancy. Newborn eye ointment and vitamin K are required by state regulation.',
+ 'Texas':'Texas: erythromycin eye ointment is required within two hours of birth by state rule, and newborn hearing screening can be declined.',
+ 'Nebraska':'Nebraska has long barred certified nurse-midwives from attending home births; the first legally authorized CNM home birth happened there in 2026.',
+ 'West Virginia':'West Virginia lawmakers moved in 2025 to make newborn eye ointment a parental choice; confirm the current rule with your hospital.',
+ 'Minnesota':'Minnesota: parents can refuse or delay newborn blood-spot, hearing and pulse-oximetry screening by signing the state form. Paid family leave benefits began January 2026.',
+ 'Colorado':'Colorado: paid family leave includes 12 weeks for bonding with a new child, and has added extra paid leave for parents with a baby in the NICU.'
+};
+const R={
+ us:{name:'United States',sub:STATES,subL:'State',em:'911',lines:'<b>Mental health:</b> call or text <b>988</b> (Suicide &amp; Crisis Lifeline). <b>Postpartum Support International</b> (for moms and dads): 1-800-944-4773. <b>National Maternal Mental Health Hotline:</b> 1-833-852-6262 (call or text, 24/7).',
+  triage:'Save the hospital\'s labor and delivery triage number in both phones. Most US hospitals let you call ahead.',imp:true,amz:'amazon.com',
+  leave:'FMLA gives up to 12 weeks of unpaid, job-protected leave if you and your employer qualify. No federal law guarantees paid leave for fathers. As of 2026, 13 states plus DC have enacted paid family leave programs (California, Colorado, Connecticut, Delaware, Maine, Massachusetts, Minnesota, New Jersey, New York, Oregon, Rhode Island, Virginia, Washington and DC, with Maryland coming next), and many employers offer their own.',
+  paternity:'If you are married, you are presumed to be the legal father in every state. If you are not married, the hospital must offer you both a Voluntary Acknowledgment of Paternity form, and most states require it to put your name on the birth certificate. It\'s a legal document with rights and responsibilities (including child support), so read it, ask questions, and don\'t sign if you\'re unsure you\'re the father; you can sign later at vital records.',
+  insurance:'Add the baby to your health insurance quickly: employer plans must give you at least 30 days after the birth, and Marketplace plans 60. The hospital can also start the Social Security number application with the birth certificate paperwork.',
+  newborn:'Usually offered: vitamin K shot, antibiotic eye ointment (required by law in most states), hepatitis B vaccine (US guidance on timing has been changing, so ask your pediatrician), heel-prick blood screening, hearing screen, and a pulse-oximetry heart screen.',
+  carseat:'Hospitals usually check you have a rear-facing infant car seat before you leave by car.',
+  reg:[['Babylist','https://www.babylist.com','Universal registry: add from any store; welcome box for eligible registrants.'],['Amazon Baby Registry','https://www.amazon.com/baby-reg/homepage','Welcome box for eligible Prime members and a completion discount.'],['Target Baby Registry','https://www.target.com/gift-registry/baby-registry','Free welcome kit and a completion discount.'],['Walmart Baby Registry','https://www.walmart.com/registry/baby','Budget-friendly, with a welcome box.']],
+  naming:'Naming is governed by each state\'s vital records office. Most states ban numbers and symbols, many ban accents, some cap the length, and a few have rules for when parents disagree or the parents aren\'t married.'},
+ ca:{name:'Canada',sub:['Alberta','British Columbia','Manitoba','New Brunswick','Newfoundland and Labrador','Northwest Territories','Nova Scotia','Nunavut','Ontario','Prince Edward Island','Quebec','Saskatchewan','Yukon'],subL:'Province or territory',em:'911',lines:'<b>Mental health:</b> call or text <b>988</b> (Suicide Crisis Helpline). For health advice, call <b>811</b> in most provinces.',
+  triage:'Save your birth unit\'s number; your midwife or doctor will tell you when to call.',imp:false,amz:'amazon.ca',
+  leave:'Employment Insurance parental benefits can be shared between parents, with extra weeks if both take some. Quebec runs its own plan (QPIP) with paternity weeks just for fathers. Check Service Canada.',
+  paternity:'Rules for registering the father differ by province. Usually both parents sign the birth registration; unmarried fathers may need to sign it with the mother. Check your provincial vital statistics office.',
+  insurance:'Register the birth with your province (often online) and apply for the baby\'s health card and SIN.',
+  newborn:'Vitamin K and newborn screening are standard; eye ointment rules vary by province.',
+  carseat:'You need a car seat with the Canadian safety mark to drive home.',
+  reg:[['Amazon.ca Baby Registry','https://www.amazon.ca/baby-reg/homepage','Large selection across Canada.'],['MyRegistry','https://www.myregistry.com/baby-registry.aspx','Universal list from any shop.']],
+  naming:'Each province\'s vital statistics office sets the rules; some limit characters or symbols, and Quebec has its own naming rules under the Civil Code.'},
+ uk:{name:'United Kingdom',sub:['England','Scotland','Wales','Northern Ireland'],subL:'Nation',em:'999',lines:'<b>Urgent advice:</b> NHS <b>111</b>. <b>Mental health:</b> Samaritans <b>116 123</b> (free, 24/7). Ask your GP about perinatal support for dads too.',
+  triage:'Use your maternity triage number (it\'s on her notes); call before coming in.',imp:false,amz:'amazon.co.uk',
+  leave:'Eligible fathers can take up to two weeks\' Statutory Paternity Leave, plus Shared Parental Leave. You are also entitled to unpaid time off to attend two antenatal appointments. Check GOV.UK for current pay.',
+  paternity:'Married fathers can register the birth alone. Unmarried fathers are named on the birth certificate if they register together with the mother (or with a signed declaration); being named gives you parental responsibility in England and Wales. Register within 42 days (21 in Scotland).',
+  insurance:'Register the birth at the register office, then the baby gets an NHS number automatically; claim Child Benefit if eligible.',
+  newborn:'Vitamin K is offered; eye ointment isn\'t routine; heel-prick test at about five days, hearing screen and a newborn physical check.',
+  carseat:'Babies must travel in a suitable rear-facing car seat by law.',
+  reg:[['Amazon.co.uk Baby Wish List','https://www.amazon.co.uk/baby-reg/homepage','Simple list with a welcome box for eligible members.'],['John Lewis Gift List','https://www.johnlewis.com/gift-list','Trusted for big items.'],['MyRegistry','https://www.myregistry.com/baby-registry.aspx','Universal list.']],
+  naming:'There are few legal limits on first names in the UK, but registrars can refuse names that are offensive, too long to fit, or made of numbers and symbols.'},
+ au:{name:'Australia',sub:['Australian Capital Territory','New South Wales','Northern Territory','Queensland','South Australia','Tasmania','Victoria','Western Australia'],subL:'State or territory',em:'000',lines:'<b>Mental health:</b> Lifeline <b>13 11 14</b>. <b>PANDA</b> (perinatal anxiety and depression, dads too): 1300 726 306. Pregnancy, Birth and Baby: 1800 882 436.',
+  triage:'Save your birth suite\'s number and call before coming in.',imp:false,amz:'amazon.com.au',
+  leave:'Parental Leave Pay from Services Australia can be shared between parents; check eligibility and current weeks.',
+  paternity:'Both parents usually sign the birth registration statement with your state\'s Registry of Births, Deaths and Marriages, typically within 60 days.',
+  insurance:'Register the birth, then add the baby to Medicare as soon as possible.',
+  newborn:'Vitamin K, hepatitis B vaccine, newborn bloodspot screening and a hearing screen are offered.',
+  carseat:'An Australian-standard car restraint, correctly fitted, is required.',
+  reg:[['Amazon.com.au Baby Registry','https://www.amazon.com.au/baby-reg/homepage','Wide range, fast delivery.'],['MyRegistry','https://www.myregistry.com/baby-registry.aspx','Universal list.']],
+  naming:'Each state registry can refuse names that are obscene, offensive, too long, contain symbols, or resemble an official title (like "King" or "Judge").'},
+ in:{name:'India',sub:null,em:'112 (ambulance 108; maternal transport 102 in many states)',lines:'<b>Mental health:</b> Tele-MANAS <b>14416</b> (free, 24/7).',
+  triage:'Save the hospital\'s labor room number and your doctor\'s.',imp:false,amz:'amazon.in',
+  leave:'There is no national paternity-leave law for private employees; central government employees get 15 days. Check your employer\'s policy.',
+  paternity:'Register the birth (hospitals usually start it) within 21 days. A father\'s name can be added with both parents\' details; ask the registrar.',
+  insurance:'Ask your insurer how to add the newborn; many policies need notice within a set number of days.',
+  newborn:'Vitamin K and birth-dose vaccines (BCG, oral polio, hepatitis B) are given. Under the LaQshya program, the mother has the right to a birth companion of her choice; ask early whether you can stay.',
+  carseat:'Use a properly fitted infant car seat in a car; avoid two-wheelers with a newborn.',
+  reg:[['Amazon.in Baby Wish List','https://www.amazon.in/baby-reg/homepage','Large selection.'],['MyRegistry','https://www.myregistry.com/baby-registry.aspx','Universal list.']],
+  naming:'The name can be added to the birth certificate later if not decided yet; ask the registrar about the deadline.'},
+ xx:{name:'Somewhere else',sub:null,em:'your local emergency number',lines:'Find your country\'s crisis line at findahelpline.com.',
+  triage:'Save your hospital\'s and provider\'s numbers in both phones.',imp:false,amz:'amazon.com',
+  leave:'Check your national paternity and parental leave rules and your employer\'s policy.',paternity:'Ask the hospital how a father is named on the birth registration, especially if you aren\'t married.',
+  insurance:'Ask how to register the birth and add the baby to health cover.',newborn:'Ask which newborn procedures are routine and which are your choice.',carseat:'Check your local car seat law.',
+  reg:[['MyRegistry','https://www.myregistry.com/baby-registry.aspx','Universal list in many countries.']],naming:'Ask your civil registry about naming rules.'}
+};
+let cur=store('region')||null;const rg=()=>R[cur?.c||'us'];
+
+/* ===== Week data (home + journey) ===== */
+const W=[
+ {from:4,to:8,t:'Weeks 4–8: the secret',her:'Exhaustion, nausea (any time of day), sore breasts, needing to pee, big emotions. Many people feel worst in these weeks while looking no different.',watch:'Severe vomiting or not keeping fluids down; heavy bleeding or one-sided pain (call straight away).',do:['Take over cooking smells and the bins','Keep crackers and water by the bed','Go to the first appointment','Agree together who to tell, and when'],feel:'Excited, unreal, or nothing at all yet. All normal. Some dads already feel queasy too.'},
+ {from:9,to:13,t:'Weeks 9–13: first scan',her:'Nausea may peak then ease; worry about miscarriage is common until the end of this stage.',watch:'Bleeding, cramping, fever.',do:['Ask about screening tests together and what each can and can\'t tell you','Start a shared notes doc of questions','Look into your leave options at work now'],feel:'Seeing the heartbeat can make it real. Fear of loss is normal; talk about it.'},
+ {from:14,to:18,t:'Weeks 14–18: energy returns',her:'Often feels better, more energy, a small bump. Round-ligament pains (sharp, low, brief) are common.',watch:'Persistent pain, bleeding, fever.',do:['Plan something fun together','Start pelvic-floor reminders (for her) and a walking habit (for both)','Start a budget for the baby'],feel:'Relief, maybe impatience. Good time to look after your own health.'},
+ {from:19,to:23,t:'Weeks 19–23: the anatomy scan',her:'First flutters of movement, bigger bump, back ache, trouble sleeping on her back.',watch:'Reduced movement once it\'s established; leaking fluid.',do:['Go to the anatomy scan (usually 18–22 weeks)','Book a birth class together','Start the registry'],feel:'Feeling a kick through her belly is often the moment it lands for dads.'},
+ {from:24,to:27,t:'Weeks 24–27: building the nest',her:'Glucose test for gestational diabetes, heartburn, swelling, braxton-hicks tightenings.',watch:'Severe headache, vision changes, sudden swelling of face or hands (possible pre-eclampsia).',do:['Learn the urgent warning signs','Research pediatricians and childcare','Tour the hospital or birth center'],feel:'Nesting can hit dads too: building cribs, fixing the house. Channel it.'},
+ {from:28,to:32,t:'Weeks 28–32: third trimester',her:'Tired again, breathless, poor sleep, aches. Visits get more frequent.',watch:'Any change in the baby\'s movement pattern; regular contractions before 37 weeks.',do:['Draft the birth plan together','Vaccines in pregnancy: help her keep track','Start batch-cooking','Learn infant CPR'],feel:'The "provider" pressure often spikes here: money, work, space. Talk it out.'},
+ {from:33,to:36,t:'Weeks 33–36: get ready',her:'Very uncomfortable, frequent peeing, nervous or impatient, may stop working.',watch:'Waters breaking, bleeding, reduced movements, severe headache.',do:['Pack both bags and install the car seat by 36 weeks','Practice the drive and know the night entrance','Save triage numbers in both phones','Set your visitor rules'],feel:'Fear of the birth itself is very common in dads. Learning what happens shrinks it.'},
+ {from:37,to:41,t:'Weeks 37–41: any day now',her:'Full term. Practice contractions, losing the mucus plug, nesting, frustration.',watch:'The go-now signs on the Birth day page.',do:['Keep fuel in the car and your phone charged','Keep her company, keep it calm','Use the contraction timer','Ask what happens if she goes past her due date'],feel:'Restless, on call. Sleep when you can; you\'ll need it.'},
+ {from:42,to:45,t:'Weeks 1–3 after birth: survival mode',her:'Bleeding, pain, after-pains, milk coming in around day 3–5, baby blues (tears, highs and lows) for most moms.',watch:'Heavy bleeding (a pad an hour), fever, a red or opening wound, leg pain or swelling, chest pain, low mood lasting beyond two weeks, any thought of self-harm.',do:['Take every non-feeding job: diapers, burping, settling, bathing','Guard her sleep and the door','Bring water and food to every feed','Do skin-to-skin yourself'],feel:'Love, panic, exhaustion. The first weeks are hard for everyone. It gets easier.'},
+ {from:46,to:52,t:'Weeks 4–12 after birth: finding a rhythm',her:'Healing, her postpartum check, sleep debt, identity shifts, maybe returning to work.',watch:'Depression or anxiety in either of you; her pelvic or wound pain not improving.',do:['Own a night shift (with expressed milk or formula, if that suits you)','Take your leave, even if it\'s short','Plan one hour off for each of you each week','Check in honestly: "How are you, really?"'],feel:'Dad depression often appears 3–6 months in. Notice anger and withdrawal in yourself.'}
+];
+const BABY=[[4,'a poppy seed'],[8,'a raspberry'],[12,'a lime'],[16,'an avocado'],[20,'a banana'],[24,'an ear of corn'],[28,'an eggplant'],[32,'a squash'],[36,'a honeydew melon'],[40,'a small watermelon']];
+const stageOf=w=>W.find(s=>w>=s.from&&w<=s.to)||W[W.length-1];
+const HER=B=>[[0.3,0],[3.2,1.2],[4.4,3.4],[4.9,5.5],[6.0,7.3],[5.1,8.2],[5.2,9.3],[4.6,11.1],[3.0,12.3],[2.4,13.6],[2.6,15.8],[4.6,18.4],[6.4,21.4],[6.6,24.2],[5.6,26.6],[5.6+B*.25,28.8],[5.8+B*.8,32.5],[5.6+B,36.5],[5.0+B*.75,40.8],[4.2+B*.3,44.5],[3.6,47.5],[4.4,51.5],[4.2,60],[3.4,70.5],[3.0,74],[3.0,82],[2.2,92],[2.2,95],[5,97.4],[10.4,99.1],[10.6,100],[-3,100],[-3.2,98],[-2.5,95.5],[-2.8,90],[-4.0,82],[-3.1,74],[-3.0,70],[-4.2,60],[-5.6,52],[-6.2,48],[-5.0,43],[-3.6+B*.15,38],[-4.2,31],[-5.0,24],[-4.8,19.5],[-2.8,16],[-2.6,14.2],[-3.8,11.5],[-4.7,8],[-4.4,4],[-2.8,1.2]];
+const HIM=D=>[[0.3,0],[3.3,1.0],[4.6,3.2],[5.1,5.4],[6.2,7.4],[5.2,8.3],[5.3,9.4],[4.9,11.3],[3.4,12.5],[2.8,13.8],[3.0,16],[5.2,18.6],[6.6,21.5],[6.5,25],[5.8,28.2],[5.8+D*.4,31],[6.0+D,35.5],[5.4+D*.7,40.5],[4.4+D*.25,44.5],[3.8,47.8],[4.6,52],[4.5,60],[3.6,70.5],[3.2,74],[3.2,82],[2.4,92],[2.4,95],[5.4,97.4],[11,99.1],[11.2,100],[-3.2,100],[-3.4,98],[-2.7,95.5],[-3.0,90],[-4.3,82],[-3.3,74],[-3.2,70],[-4.4,60],[-5.4,52],[-5.8,48],[-5.0,43],[-4.4,38],[-4.8,31],[-5.8,24],[-5.6,19.5],[-3.2,16],[-2.9,14.2],[-4.0,11.5],[-4.9,8],[-4.6,4],[-2.9,1.2]];
+const smooth=P=>{const n=P.length,f=v=>v.toFixed(1);let d=`M${f(P[0][0])} ${f(P[0][1])}`;for(let i=0;i<n;i++){const p0=P[(i-1+n)%n],p1=P[i],p2=P[(i+1)%n],p3=P[(i+2)%n];d+=`C${f(p1[0]+(p2[0]-p0[0])/6)} ${f(p1[1]+(p2[1]-p0[1])/6)} ${f(p2[0]-(p3[0]-p1[0])/6)} ${f(p2[1]-(p3[1]-p1[1])/6)} ${f(p2[0])} ${f(p2[1])}`}return d+'Z'};
+const ik=(s,t,L1,L2)=>{let dx=t[0]-s[0],dy=t[1]-s[1],d=Math.hypot(dx,dy);d=Math.min(d,L1+L2-.01);const a=Math.acos(Math.max(-1,Math.min(1,(L1*L1+d*d-L2*L2)/(2*L1*d)))),th=Math.atan2(dy,dx);const e1=[s[0]+L1*Math.cos(th+a),s[1]+L1*Math.sin(th+a)],e2=[s[0]+L1*Math.cos(th-a),s[1]+L1*Math.sin(th-a)];const e=e1[1]>e2[1]?e1:e2;const tt=[s[0]+(t[0]-s[0])*(d/Math.hypot(dx,dy)||1),s[1]+(t[1]-s[1])*(d/Math.hypot(dx,dy)||1)];return [e,tt]};
+const lerp=(a,b,t)=>a+(b-a)*t,cl=t=>Math.max(0,Math.min(1,t)),ease=t=>t*t*(3-2*t);
+function hueAt(w){const K=[[4,205],[16,262],[28,328],[40,398],[52,388]];for(let i=1;i<K.length;i++)if(w<=K[i][0]){const t=(w-K[i-1][0])/(K[i][0]-K[i-1][0]);return (lerp(K[i-1][1],K[i][1],t))%360}return 50}
+function drawDuo(){
+ const s=$('#duo'),Wd=s.clientWidth,H=s.clientHeight;if(!Wd||!H)return;
+ const w=+$('#wk').value,post=w>41,preg=Math.min(w,40),h=hueAt(w);
+ const B=post?2.2:6.6*ease(cl((preg-11)/29)),D=2.6*ease(cl((w-8)/36));
+ const k=Math.min(H*.7/107,Wd*.84/43),gy=H*.82,cx=Wd/2;
+ const herO=-12.5,himO=12.5,sH=1,sM=1.07;
+ const W2S=(X,Y)=>[cx+X*k,gy+Y*k];
+ const herL=(x,y)=>[herO+x*sH,(y-100)*sH],himL=(x,y)=>[himO-x*sM,(y-100)*sM];
+ const pathOf=(P,L)=>smooth(P.map(([x,y])=>W2S(...L(x,y))));
+ const herP=pathOf(HER(B),herL),himP=pathOf(HIM(D),himL);
+ const reachArm=(s,e,t,L2)=>{const dx=t[0]-e[0],dy=t[1]-e[1],d=Math.hypot(dx,dy)||1,m=Math.min(1,L2/d);return [s,e,[e[0]+dx*m,e[1]+dy*m]]};
+ const mix=(p,q,t)=>[lerp(p[0],q[0],t),lerp(p[1],q[1],t)];
+ // her arm: hangs early, rests on the bump later, cradles the baby after birth
+ const baby=herL(8.2,27.6),bt=ease(cl((B-1.2)/3));
+ const [hs,he,hw]=post?reachArm(herL(.4,20.5),herL(.2,37),herL(8.8,31.2),16):reachArm(herL(.4,20.5),mix(herL(.6,37.5),herL(-.6,37),bt),mix(herL(1.3,55),herL(4.6+B*.95,39.5),bt),16);
+ // his arm: reaches toward her as the weeks pass
+ const rt=post?1:ease(cl((w-14)/12)),tgt=post?[baby[0]-.6,baby[1]+2.4]:herL(5.4+B*.85,33.5);
+ const [ms,me,mw]=reachArm(himL(.4,20.5),mix(himL(.6,37.5),himL(1.6,36.5),rt),mix(himL(1.3,55),tgt,rt),16*sM);
+ const arm=(a,b,c,wd)=>{const [A,Bp,C]=[W2S(...a),W2S(...b),W2S(...c)];return `M${A[0].toFixed(1)} ${A[1].toFixed(1)}L${Bp[0].toFixed(1)} ${Bp[1].toFixed(1)}L${C[0].toFixed(1)} ${C[1].toFixed(1)}`};
+ const herArm=arm(hs,he,hw),himArm=arm(ms,me,mw);
+ const bun=W2S(...herL(-4.9,4.2)),bb=W2S(...baby);
+ const ink=`hsl(${h} 38% 13%)`,rim=`hsl(${(h+8)%360} 90% 82%)`,glow=`hsl(${h} 88% 64%)`,glow2=`hsl(${(h+340)%360} 82% 56%)`,deep=`hsl(${(h+300)%360} 45% 22%)`,floor=`hsl(${h} 22% 72%)`,floor2=`hsl(${h} 40% 88%)`;
+ const R=Math.max(Wd,H)*.42,dy=gy-62*k;
+ const sk=[[-.38,'#00b4c8'],[0,'#e0408f'],[.38,'#f3c11c']];
+ const fig=(id,p,armD,extra)=>`<g id="${id}"><path d="${armD}" fill="none" stroke="${rim}" stroke-width="${3.7*k}" stroke-linecap="round" stroke-linejoin="round"/><path d="${p}" fill="${ink}" stroke="${rim}" stroke-width="${.55*k}" stroke-opacity=".85"/><path d="${armD}" fill="none" stroke="${ink}" stroke-width="${2.6*k}" stroke-linecap="round" stroke-linejoin="round"/>${extra||''}</g>`;
+ const herExtra=`<circle cx="${bun[0]}" cy="${bun[1]}" r="${2.6*k}" fill="${ink}" stroke="${rim}" stroke-width="${.55*k}" stroke-opacity=".85"/>`;
+ s.innerHTML=`<defs>
+ <radialGradient id="field" cx="50%" cy="${(dy/H*100).toFixed(1)}%" r="75%"><stop offset="0" stop-color="${glow}"/><stop offset=".45" stop-color="${glow2}" stop-opacity=".75"/><stop offset="1" stop-color="${deep}"/></radialGradient>
+ <radialGradient id="disc"><stop offset="0" stop-color="#fffdf5"/><stop offset=".55" stop-color="${rim}"/><stop offset="1" stop-color="${glow}" stop-opacity="0"/></radialGradient>
+ <linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${floor2}"/><stop offset="1" stop-color="${floor}"/></linearGradient>
+ <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="${(1.6*k).toFixed(1)}"/></filter>
+ <filter id="haze" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${(14*k).toFixed(1)}"/></filter>
+ <path id="sh1" d="${herP}"/><path id="sh2" d="${himP}"/></defs>
+ <rect width="${Wd}" height="${gy}" fill="url(#field)"/>
+ ${[1.9,1.5,1.15].map((m,i)=>`<circle cx="${cx}" cy="${dy}" r="${R*m*.62}" fill="none" stroke="${rim}" stroke-opacity="${.10+i*.05}" stroke-width="1"/>`).join('')}
+ <circle cx="${cx}" cy="${dy}" r="${R*.62}" fill="url(#disc)" opacity=".95"/>
+ <g class="hz" filter="url(#haze)" opacity=".55"><ellipse cx="${cx-R*.6}" cy="${gy-20*k}" rx="${R*.9}" ry="${16*k}" fill="#fff"/><ellipse cx="${cx+R*.7}" cy="${gy-48*k}" rx="${R*.7}" ry="${12*k}" fill="#fff" opacity=".7"/></g>
+ <rect y="${gy}" width="${Wd}" height="${H-gy}" fill="url(#fl)"/>
+ <g filter="url(#soft)" style="mix-blend-mode:multiply">${sk.map(([kx,c])=>['sh1','sh2'].map(id=>`<use href="#${id}" fill="${c}" opacity=".5" transform="translate(0 ${gy}) matrix(1 0 ${kx} -0.3 0 0) translate(0 ${-gy})"/>`).join('')).join('')}</g>
+ ${fig('fHer',herP,herArm,herExtra)}${fig('fHim',himP,himArm)}${post?`<g transform="rotate(-12 ${bb[0]} ${bb[1]})"><ellipse cx="${bb[0]}" cy="${bb[1]}" rx="${5.6*k}" ry="${2.9*k}" fill="${ink}" stroke="${rim}" stroke-width="${.55*k}"/><circle cx="${bb[0]+4.6*k}" cy="${bb[1]-1.6*k}" r="${2.3*k}" fill="${ink}" stroke="${rim}" stroke-width="${.55*k}"/></g><path d="${herArm}" fill="none" stroke="${ink}" stroke-width="${2.6*k}" stroke-linecap="round" stroke-linejoin="round"/>`:''}
+ <rect y="${gy-1}" width="${Wd}" height="2" fill="${rim}" opacity=".35"/>`;
+ const bsize=(BABY.slice().reverse().find(b=>preg>=b[0])||BABY[0])[1];
+ $('#duoCap').innerHTML=post?`<b>${w-40} week${w-40>1?'s':''} after birth.</b> Her body is healing; your hands are full.`:`<b>Week ${w}.</b> Baby is about the size of ${bsize}. ${rt<.2?'You stand beside her.':rt<.95?'You\'re reaching in.':'Your hand finds the kicks.'} Your own belly: ${D<.6?'not yet':D<1.7?'arriving':'fully grown'}.`;
+}
+
+function renderWeek(){
+ const w=+$('#wk').value,s=stageOf(w);store('week',w);
+ $('#wkLbl').textContent=w<=41?w:`${w-40} weeks after birth`;
+ $('#wkTitle').textContent=s.t;
+ $('#wkCards').innerHTML=`<div class="card"><h3>What she may feel</h3><p>${s.her}</p><p class="note"><b>Watch for:</b> ${s.watch}</p></div>
+ <div class="card"><h3>What you can do</h3><ul class="ck">${s.do.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+ <div class="card"><h3>What you might feel</h3><p>${s.feel}</p><p><a href="#coaching">Talk it through with me</a> · <a href="#course">Open this month\'s lesson</a></p></div>`;
+ drawDuo();
+}
+$('#wk').value=store('week')||20;$('#wk').addEventListener('input',renderWeek);
+const ro=new ResizeObserver(drawDuo);ro.observe($('#duo'));
+const HOME=[['course','The course','14 lessons from Month 0 to three months after birth: what to do now, what\'s next.'],['birthday','Birth day','Your jobs in labor, and what to do in every situation.'],['hospital','Hospital stay','Who knocks on the door, and which offers you can turn down.'],['rights','Your rights','Paternity, leave, consent, insurance and naming laws for your state.'],['watch','Watch for','Documented hospital practices that catch uninformed parents out.'],['you','You','Dad belly, hormones, mental health and a meal plan.'],['bag','Bags','Her bag, your bag, baby\'s bag, tick as you pack.'],['plan','Birth plan','Build it together, including your role and visitor rules.'],['gear','Gear','The lifesavers and the dust-gatherers, plus registries.'],['traditions','Traditions','What fathers did across cultures and history.'],['coaching','Coaching','Monthly sessions with me so you\'re not alone.']];
+$('#homeCards').innerHTML=HOME.map(([k,t,d])=>`<a class="card" href="#${k}"><h3>${t}</h3><p>${d}</p></a>`).join('');
+
+/* ===== Birth day ===== */
+const JOBS=[['Early labor (home)','Keep it calm and normal: a film, a walk, light food, a shower. Time contractions. Encourage rest. Call when your provider\'s rule is met.'],['The drive','Bags, car seat, phone, charger, plan. Drive steadily, not fast. Know the night entrance and where to park. Drop her at the door if you need to park far.'],['Triage and check-in','Hand over the plan. Answer the admin questions so she doesn\'t have to. It\'s normal to be sent home if labor is still early.'],['Active labor','Counter-pressure on her lower back, water after every contraction, cool cloth, help her change position, low lights, quiet voice. Say less; touch more.'],['Transition','The hardest part: she may say "I can\'t do this". That often means birth is close. Stay close and steady: "You are doing it. One at a time."'],['Pushing and birth','Hold a leg if asked, count only if she wants it, tell her what you see. Cut the cord if you want to and it\'s offered.'],['The first hour','Protect skin-to-skin. If she can\'t (for example after a cesarean), ask to do skin-to-skin yourself: studies show newborns settle as well on dad\'s chest.'],['After','Send the one-line message to family, then the phone goes away. Get her food. Learn the first diaper change with the nurse.']];
+$('#bdJobs').innerHTML=JOBS.map(([t,d])=>`<div class="card"><h3>${t}</h3><p>${d}</p></div>`).join('');
+const SC=[
+ ['Her waters break at home (or somewhere public)','Stay calm; it\'s usually a trickle, not a movie gush. Note the time, color and smell. Put a towel on the car seat. Call her provider; most want to hear from you even with no contractions.','"That\'s great, it means things are moving. I\'ll call, you sit."'],
+ ['Labor is very fast and you might not make it','If she has an overwhelming urge to push or can see the head, stop the car safely and call the emergency number; the dispatcher will talk you through it. Keep baby warm on her chest, dry baby off, don\'t pull the cord.','"Help is on the line. You\'re safe. Breathe with me."'],
+ ['She snaps at you or doesn\'t want to be touched','It\'s not about you. Labor narrows the world. Stay nearby, offer, don\'t push. What she wanted 10 minutes ago may change.','"I\'m right here. Tell me what helps."'],
+ ['She planned no epidural and now wants one','Her plan is a guide, not a contract. Your job is to support the choice she makes now, not to remind her of the old one, unless she asked you beforehand to check once.','"Whatever you choose is right. Want me to ask for it?"'],
+ ['The doctor recommends a cesarean','Ask: is this an emergency or do we have time to talk? What are the reasons, risks and alternatives? If it\'s urgent, things move fast. You\'ll usually be gowned and brought in once she\'s numbed; sit by her head, talk to her, and do skin-to-skin if baby comes to you.','"We\'ve got this. I\'m staying with you."'],
+ ['The room suddenly fills with people','It can be an alarm, a bleed, or the baby needing help. Stand by her head, out of the way, hold her hand, and ask one person later what happened. You can ask "Is she okay? Is the baby okay?"','"They\'re helping. I\'m here."'],
+ ['You feel faint or sick','Very common. Sit down immediately, head low, sip water, eat something. Tell a nurse. Better to step back for a minute than to become a second patient.','"I need one minute. I\'ll be right back."'],
+ ['Baby goes to the NICU','Ask if you can go with the baby while she\'s cared for. Take photos and video for her. Learn the unit\'s rules, ask about skin-to-skin (kangaroo care) and expressing milk. Check your leave options.','"I\'m with the baby. I\'ll send you everything."'],
+ ['Visitors turn up uninvited','You are the gatekeeper. Be warm and firm. Hospitals often let you put a sign on the door or ask the nurses to hold visitors.','"We\'re resting now. We\'ll call you as soon as we\'re ready."'],
+ ['Family pressure about names, traditions or feeding','Agree your answers together in private, then present a united front. Choices about her body and the baby are yours as parents.','"We\'ve decided together. We love you; this is ours to choose."'],
+ ['Breastfeeding isn\'t working','Very common in the first days. Ask for the lactation consultant, and an outpatient one after discharge. Watch for enough wet and dirty diapers. Fed is the goal; formula is not failure.','"Let\'s get some help. You\'re not doing anything wrong."'],
+ ['It\'s 3 a.m., the baby won\'t stop crying, and you\'re losing it','Check: hungry, wet, too hot or cold, wind? Then swaddle, shush, sway. If you feel anger rising, put the baby down safely in the crib and step away for a few minutes. Never shake a baby.','"I\'m going to put you down safely and breathe for a minute."'],
+ ['She\'s crying a lot on day 4','Baby blues are common in the first two weeks as hormones crash. Hold her, feed her, let her sleep. If it lasts longer, gets heavier, or she talks about harming herself or the baby, get help immediately.','"You\'re doing an amazing job. Let me take the next feed."'],
+ ['If you lose the baby','Nothing prepares you, and there\'s no right way to grieve. Ask for time with your baby, photos, keepsakes, and a bereavement midwife or social worker. Look after her and let people look after you. Grief support exists for fathers too, and I\'m here to talk.','"I\'m here. We\'ll get through this together."']
+];
+$('#scen').innerHTML=SC.map(([t,d,s],i)=>`<details id="sc${i}"><summary>${t}</summary><div><p>${d}</p><p class="say">${s}</p></div></details>`).join('');
+
+/* contraction timer */
+let ct=store('ct')||[],on=null,tick;const mmss=s=>`${Math.floor(s/60)}:${String(Math.round(s%60)).padStart(2,'0')}`;
+function ctRender(){$('#ctRows').innerHTML=ct.slice(-8).reverse().map((c,i,a)=>{const p=a[i+1];return `<tr><td>${new Date(c.s).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'})}</td><td>${mmss((c.e-c.s)/1000)}</td><td>${p?mmss((c.s-p.s)/1000):'—'}</td></tr>`}).join('');
+ const hr=ct.filter(c=>Date.now()-c.s<36e5);
+ if(hr.length>=3){const gaps=hr.slice(1).map((c,i)=>(c.s-hr[i].s)/1000),gap=gaps.reduce((a,b)=>a+b)/gaps.length,len=hr.reduce((a,c)=>a+(c.e-c.s)/1000,0)/hr.length,span=(Date.now()-hr[0].s)/6e4;
+  $('#ctSum').innerHTML=`Last hour: every <b>${mmss(gap)}</b>, lasting <b>${mmss(len)}</b>.${gap<=330&&len>=50&&span>=50?' <b>This looks like 5-1-1. Call her provider or birth unit.</b>':''}`}
+ else $('#ctSum').textContent=ct.length?'Keep timing; a pattern shows after a few contractions.':'Tap when a contraction starts and again when it ends.'}
+$('#ctBtn').addEventListener('click',()=>{if(on===null){on=Date.now();$('#ctBtn').textContent='Contraction ended';tick=setInterval(()=>$('#ctClock').textContent=mmss((Date.now()-on)/1000),500)}else{ct.push({s:on,e:Date.now()});store('ct',ct.slice(-60));on=null;clearInterval(tick);$('#ctBtn').textContent='Contraction started';ctRender()}});
+$('#ctReset').addEventListener('click',()=>{ct=[];store('ct',ct);on=null;clearInterval(tick);$('#ctClock').textContent='0:00';$('#ctBtn').textContent='Contraction started';ctRender()});
+
+/* ===== Hospital ===== */
+const HOSP=[
+ ['Nurses, every few hours','Checks her blood pressure, bleeding and pain, and the baby\'s temperature, breathing and feeding. Expect visits through the night.','<span class="mixed">Ask to cluster checks</span> so she can sleep longer. Medical checks matter, especially in the first 24 hours.'],
+ ['The baby\'s doctor (pediatrician)','Examines the baby, usually within a day, and talks about feeding, jaundice and going home.','<span class="mixed">You can choose who it is</span> before birth; the exam itself is part of safe care.'],
+ ['Lactation consultant','A breastfeeding specialist who helps with latch, positions, pumping and supply.','<span class="yes">Yes.</span> It\'s a free offer you can accept, delay ("come back after she naps") or decline. If she\'s formula feeding, just say so. If feeding is hard, ask for them; it\'s one of the most useful visits.'],
+ ['Hearing screen','A quick, painless test while baby sleeps.','<span class="mixed">Usually yes, by signing a refusal form</span> (several states, such as Texas and Minnesota, explicitly allow it). It finds hearing loss early, so most families say yes.'],
+ ['Heel-prick (blood-spot) screening','A few drops of blood test for dozens of rare but serious conditions.','<span class="mixed">In most places you can refuse or delay with a signed form</span>, after being told the risks. Strongly recommended.'],
+ ['Vitamin K, eye ointment, vaccines','Prevents dangerous bleeding, eye infection, and hepatitis B.','<span class="mixed">Depends on the law where you are.</span> Some states require eye ointment; most let you decline with a form. Ask your pediatrician before the birth, not at 2 a.m.'],
+ ['Newborn photographer','A private company offering paid photo packages in your room.','<span class="yes">Yes, always.</span> It\'s a sales visit. A polite "no thank you" is enough, or a sign on the door.'],
+ ['Birth certificate clerk','Collects details for the birth certificate and often the Social Security (or national ID) application.','<span class="mixed">Needed, but you can take time.</span> Have your name decided, or ask what the deadline is.'],
+ ['Paternity form (unmarried parents)','A legal acknowledgment of paternity that lets you be named as father.','<span class="yes">Yes, it\'s voluntary.</span> Read it and ask questions; you can sign it later at vital records.'],
+ ['Circumcision offer','An optional procedure for boys, often offered before discharge in the US.','<span class="yes">Yes.</span> Entirely your choice as parents; decide before birth.'],
+ ['Social worker or financial counsellor','Helps with insurance, benefits, or support at home.','<span class="yes">Yes</span>, though they can be genuinely helpful.'],
+ ['Discharge teaching and car seat check','Safe sleep, feeding, warning signs; some states show a video about infant crying and shaken baby syndrome. They\'ll check the car seat.','<span class="mixed">Expected before you leave.</span> Ask every question now; it\'s free advice.']
+];
+$('#hospRows').innerHTML=HOSP.map((r,i)=>`<tr id="h${i}"><td><b>${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('');
+const SURP=[['The second night','Babies often wake and feed almost constantly on night two ("cluster feeding"). It\'s normal, not a sign of low milk.'],['The first poo','Black, sticky tar called meconium. Olive oil or a barrier cream on the skin first makes cleaning easier.'],['How much she bleeds','Bleeding is heavy at first and lasts weeks. Your job: pads, peri bottle and fresh underwear ready.'],['Shaky after-pains','Contractions continue after birth, stronger during breastfeeding. Ask about pain relief.'],['Yellow baby','Mild jaundice is common around days 2–5; they\'ll check levels before you leave. Tell them if baby is very sleepy or won\'t feed.'],['The bill','In the US, ask for an itemized bill and check it against your insurer\'s statement before paying.'],['Your bed','Often a fold-out chair. Bring a pillow, a hoodie and earplugs.'],['Going home feeling unready','Everyone does. Write down the after-hours number and your pediatrician appointment, usually within 1–3 days.']];
+$('#surprises').innerHTML=SURP.map(([t,d])=>`<div class="card"><h3>${t}</h3><p>${d}</p></div>`).join('');
+
+/* ===== Rights ===== */
+function renderRights(){
+ const r=rg(),st=cur?.s,ext=st&&STATE_EXTRA[st];
+ const cards=[['Consent and refusal','Every adult patient has the right to be told the benefits, risks and alternatives of a procedure and to accept or refuse it, except in genuine emergencies where consent is implied. She makes decisions about her body; you two decide together for the baby. You can always ask for a second opinion or the hospital\'s patient advocate.'],
+  ['Being there','Hospitals set their own rules for how many support people can stay, and they can change during outbreaks. Ask on your tour, and ask whether you can stay overnight and come into the operating room for a cesarean.'],
+  ['Paternity and the birth certificate',r.paternity+(ext&&/Paternity|Parentage|paternity/.test(ext)?`<br><br><b>${st}:</b> ${ext}`:'')],
+  ['Leave from work',r.leave+(st&&r===R.us?`<br><br><b>${st}:</b> ${PFML.includes(st)?'has a state paid family leave program (check its site for your benefit and start date).':'has no state-run paid family leave program as of 2026; check employer policies and FMLA.'}`:'')],
+  ['Insurance and registration',r.insurance],
+  ['Newborn procedures',r.newborn+' '+r.carseat]];
+ $('#rightsCards').innerHTML=cards.map(([t,d])=>`<div class="card"><h3>${t}</h3><p>${d}</p></div>`).join('')+(ext&&!/Paternity|Parentage/.test(ext)?`<div class="card"><h3>Also in ${st}</h3><p>${ext}</p></div>`:'');
+ let nb=`<p>${r.naming}</p>`;
+ if(r===R.us){nb+=st?`<p class="region"><b class="tag">${st}:</b> ${NAME[st]||'No unusual naming rules were found for this state in our research; most states ban numbers and symbols. Check with your state vital records office.'}</p>`:'';
+  nb+=`<details><summary>Compare states with notable rules</summary><div class="scroll"><table class="stack"><thead><tr><th>State</th><th>Rule</th></tr></thead><tbody>${Object.entries(NAME).map(([k,v])=>`<tr><td><b>${k}</b></td><td>${v}</td></tr>`).join('')}</tbody></table></div></details>
+  <div class="tip">Practical tips: decide the spelling before the clerk visits; check how it looks with no accents; agree on a back-up; and remember the everyday spelling can still include the accent, even if the certificate can't.</div>`}
+ $('#nameBox').innerHTML=nb+'<p class="note">Naming rules are drawn from state vital records summaries and news reports; they change, so confirm with the official office.</p>';
+}
+
+/* ===== Bags ===== */
+const BAGS=[['Her bag',['ID, insurance or health card, maternity notes','Two printed birth plans','Loose nightgown or front-opening top','Robe, slippers, warm socks','Lip balm, hair ties, toiletries, glasses','Lots of maternity pads and big, dark underwear','Nursing bra and breast pads','Going-home clothes (still maternity size)']],
+ ['Your bag',['Phone, 10-foot charging cable, power bank','Snacks (lots) and a refillable water bottle with a straw for her','A button-up shirt for skin-to-skin','Change of clothes, hoodie, toothbrush, deodorant','Your medicines and glasses','Pillow and earplugs','Cash or card for parking and vending machines','Speaker and her playlist','A list of who to call, in order']],
+ ['Baby\'s bag',['Infant car seat, already installed and checked','2–3 sleepers, hat, socks, a light blanket','Newborn diapers and wipes (check what the hospital provides)','Burp cloths','Going-home outfit']]];
+let tick2=store('bag')||{};
+$('#bags').innerHTML=BAGS.map(([t,l],g)=>`<div class="card"><h3>${t}</h3>${l.map((x,i)=>`<label class="opt"><input type="checkbox" data-k="${g}-${i}" ${tick2[g+'-'+i]?'checked':''}> <span>${x}</span></label>`).join('')}</div>`).join('');
+$('#bags').addEventListener('change',e=>{tick2[e.target.dataset.k]=e.target.checked;store('bag',tick2)});
+
+/* ===== Plan ===== */
+const PO=[['Atmosphere',['Dim lights and her music','Quiet room, few people','Photos or video allowed (ask her first)','Please ask before students attend']],
+ ['Labor',['Free to move and change position','Eat and drink lightly','Shower or birth pool','Intermittent monitoring if baby is well']],
+ ['Pain relief',['Try without medicine first; please don\'t offer unless she asks','Open to gas or nitrous oxide','Epidural as early as allowed','She\'ll decide on the day']],
+ ['Birth',['Push when she feels the urge','Upright or side-lying positions','I\'d like to cut the cord','I\'d like to announce the sex']],
+ ['If a cesarean is needed',['I stay with her throughout','Clear or lowered drape','Skin-to-skin with her, or with me if she can\'t']],
+ ['After birth',['Immediate skin-to-skin','Delayed cord clamping','Breastfeeding in the first hour','Formula feeding','Baby stays with us','Delay the first bath']],
+ ['Newborn procedures',['Vitamin K','Eye ointment (where offered)','Birth vaccines as recommended','Hearing and blood-spot screening','We\'d like to discuss these with the pediatrician first']],
+ ['My role and boundaries',['I speak for her when she can\'t; please talk to me','No visitors until we invite them','Please hold the photographer and sales visits','Lactation consultant welcome','Interpreter needed','Time for a prayer or blessing at birth']]];
+let plan=store('plan')||{};
+$('#planOpts').innerHTML=PO.map(([h,o],g)=>`<fieldset style="border:0;padding:0;margin:16px 0 0"><legend style="font-weight:700;font-family:Newsreader,serif;font-size:20px">${h}</legend>${o.map((x,i)=>`<label class="opt"><input type="checkbox" data-k="${g}-${i}"> <span>${x}</span></label>`).join('')}</fieldset>`).join('');
+const PF=['pHer','pYou','pPlace','pCare','pRule','pHealth','pCall','pExtra'];
+PF.forEach(f=>{if(plan[f])$('#'+f).value=plan[f]});(plan.ch||[]).forEach(k=>{const c=document.querySelector(`#planOpts [data-k="${k}"]`);if(c)c.checked=true});
+function renderPlan(){const v=f=>$('#'+f).value.trim(),ch=[...document.querySelectorAll('#planOpts input:checked')].map(c=>c.dataset.k);plan={ch};PF.forEach(f=>plan[f]=v(f));store('plan',plan);
+ let t=`OUR BIRTH PREFERENCES\n${v('pHer')||'Her name: ________'}${v('pYou')?'  ·  Support: '+v('pYou'):''}\n`;
+ [['pPlace','Planned birth place'],['pCare','Provider'],['pRule','Come in when'],['pHealth','Health notes']].forEach(([f,l])=>{if(v(f))t+=`${l}: ${v(f)}\n`});
+ t+=`\nThank you for caring for us. These are our hopes, not demands; please explain if something different is needed for safety.\n`;
+ PO.forEach(([h,o],g)=>{const s=o.filter((_,i)=>ch.includes(`${g}-${i}`));if(s.length)t+=`\n${h.toUpperCase()}\n${s.map(x=>'• '+x).join('\n')}\n`});
+ if(v('pCall'))t+=`\nWHO TO CALL\n${v('pCall')}\n`;if(v('pExtra'))t+=`\nALSO\n${v('pExtra')}\n`;
+ t+=`\nPlease ask before any procedure that isn't urgent, and tell us why it's suggested.`;$('#planOut').textContent=t}
+$('#planForm').addEventListener('input',renderPlan);
+$('#copyPlan').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#planOut').textContent);$('#copyMsg').textContent='Copied.'}catch(e){$('#copyMsg').textContent='Copy was blocked; select the text and copy it by hand.'}});
+
+/* ===== Gear & shop ===== */
+const LIFE=['A rear-facing infant car seat, installed and checked','A bassinet or crib with a firm, flat mattress','Zip-up sleepers (zips, not poppers, at 3 a.m.)','A soft carrier or wrap: soothes baby, frees your hands','A white-noise machine','A dim red or amber night light','Burp cloths: buy a dozen','A bottle-drying rack and a bottle brush','A big insulated water bottle with a straw, for her','A long phone cable and a power bank','Freezer meals','A diaper caddy for each floor of the house'];
+const DUST=['Wipe warmer','Changing table (a mat on a dresser works)','Baby shoes before walking','Newborn-size clothes in bulk (outgrown in weeks)','Fancy baby bath tubs','Bottle sterilising machines (a pot of boiling water works)','Monitors that claim to prevent SIDS (none do)','Designer diaper bags: a backpack is better','Crib bedding sets, bumpers and pillows (unsafe)','Baby food makers'];
+$('#lifeL').innerHTML=LIFE.map(x=>`<li>${x}</li>`).join('');$('#dustL').innerHTML=DUST.map(x=>`<li>${x}</li>`).join('');
+const SHOP=[['Travel','Infant car seat','infant car seat','The one thing you can\'t leave hospital without.'],['Travel','Dad-friendly baby carrier','baby carrier newborn adjustable','Pick one that adjusts for both of your sizes.'],['Travel','Lightweight stroller','lightweight stroller newborn','One-hand fold; reclines flat for newborns.'],['Sleep','Bassinet','baby bassinet','Room-sharing for the first months; check safety standards.'],['Sleep','Zip sleepers','baby zip sleeper','Two-way zips make night changes painless.'],['Sleep','White-noise machine','white noise machine baby','Low volume, away from the crib.'],['Night shift','Red night light','red night light nursery','Lets you see without waking anyone fully.'],['Night shift','Bottle drying rack','bottle drying rack','Saves counter chaos.'],['Night shift','Burp cloths','muslin burp cloths','You can never have too many.'],['Hospital','Long charging cable','10 ft phone charging cable','Hospital outlets are never by the chair.'],['Hospital','Power bank','portable power bank','For the long labor and the photos.'],['Hospital','Water bottle with straw','insulated water bottle straw','She can drink lying down.'],['Her recovery','Postpartum recovery kit','postpartum peri bottle kit','Peri bottle and cooling pads, a week-one lifesaver.'],['Her recovery','Nursing pillow','nursing pillow','For feeding only, never sleep.'],['Your health','Infant CPR kit and course','infant CPR training kit','Learn it before the birth.']];
+let cat='All';const CATS=['All',...new Set(SHOP.map(s=>s[0]))];
+$('#shopCats').innerHTML=CATS.map(c=>`<button type="button" aria-pressed="${c===cat}">${c}</button>`).join('');
+$('#shopCats').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;cat=b.textContent;document.querySelectorAll('#shopCats button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderShop()});
+function renderShop(){const r=rg(),k=cur?.c,tag=AFF[k]||'';
+ $('#shopGrid').innerHTML=SHOP.filter(s=>cat==='All'||s[0]===cat).map(([c,n,q,d])=>`<div class="card"><p class="note">${c}</p><h3>${n}</h3><p>${d}</p><a class="btn ghost" target="_blank" rel="noopener sponsored" href="https://www.${r.amz}/s?k=${encodeURIComponent(q)}${tag?'&tag='+tag:''}">See options on ${r.amz}</a></div>`).join('')}
+
+/* ===== Traditions ===== */
+const TRAD=[['Couvade: the father "labors" too','From the ancient Cantabri of northern Spain to communities in South America, Papua New Guinea, India and China, fathers took to bed, kept food taboos, or mimicked labor around the birth. Anthropologists read it as a public claim: this child is mine too, and I share the ordeal.','Borrow: take on visible, physical care. Rest when she rests. Make your role public.'],
+ ['The Aka fathers of Central Africa','Anthropologist Barry Hewlett found Aka fathers hold or stay within arm\'s reach of their infants about 47% of the time, more direct care than in any other known society. Fathers learn the baby\'s cues by sheer closeness.','Borrow: hold the baby a lot, skin-to-skin, from day one. Closeness is how you learn your child.'],
+ ['The call to prayer and the first taste','In many Muslim families the father, or an elder, whispers the adhan in the newborn\'s right ear so the first words it hears are a prayer, and a softened date may be touched to the baby\'s palate (tahnik). The naming and aqiqah often follow on the seventh day.','Borrow: give the father a first act of welcome, whatever your faith.'],
+ ['Jatakarma: welcoming the newborn','An ancient Hindu birth rite in which the father touches a little honey and ghee to the baby\'s lips and whispers blessings and the sacred syllable in its ear; a naming ceremony (namakarana) follows days later.','Borrow: plan a few words you will say to your baby first.'],
+ ['Sitting the month and the forty days','In China, "zuo yuezi" gives the mother a month of rest, warm foods and protection; across Latin America "la cuarentena" and in many South Asian, Middle Eastern and African cultures, a forty-day rest is kept. Families take over the house.','Borrow: you and your people run the house for the first month so she can heal.'],
+ ['Going home to her mother','In Japan, "satogaeri bunben" sees the mother return to her parents\' home to give birth and recover, surrounded by women who know the work.','Borrow: plan who supports her in weeks 1–6, and invite them in on her terms.'],
+ ['Jewish naming','A boy is traditionally named at his brit milah on the eighth day; a girl is often named in synagogue when her father is called up to the Torah, or at a simchat bat.','Borrow: give the name a moment, with family gathered.'],
+ ['The Swedish "latte dads"','Sweden reserves a share of paid parental leave for each parent that can\'t be transferred. Fathers pushing prams in cafés became a national image of normal fatherhood.','Borrow: take every day of leave you can, and be visible doing it.']];
+$('#trad').innerHTML=TRAD.map(([t,d,b])=>`<div class="card"><h3>${t}</h3><p>${d}</p><p class="tip">${b}</p></div>`).join('');
+
+/* ===== Meals ===== */
+const MEALS=[['Mon','Oats, banana, peanut butter','Leftover chilli in a wrap','Big pot of chilli or dal (freeze half)','Boiled eggs'],['Tue','Greek yoghurt, berries, granola','Tuna or bean salad sandwich','Sheet-pan chicken and veg','Cheese and crackers'],['Wed','Eggs on toast','Leftover sheet-pan bake','Lentil soup and bread (freeze half)','Apple and nuts'],['Thu','Smoothie: milk, spinach, fruit, oats','Rice bowl with leftovers','Stir-fry with tofu or beef','Oat bars'],['Fri','Breakfast burrito (from freezer)','Soup from freezer','Lasagne or biryani tray (freeze half)','Hummus and carrots'],['Sat','Pancakes together','Eat out or a friend brings lunch','Grilled fish or paneer, salad, potatoes','Dates or dried fruit'],['Sun','Shakshuka or khichuri','Leftovers','Slow-cooker stew (freeze half)','Trail mix']];
+$('#mealT tbody').innerHTML=MEALS.map(r=>`<tr>${r.map((c,i)=>i?`<td>${c}</td>`:`<td><b>${c}</b></td>`).join('')}</tr>`).join('');
+
+/* ===== Coaching ===== */
+const TIERS=[['steady','Steady','$39','/mo','Monthly meetings','A 45-minute video call every month, more often near the birth, and messages answered within two working days.',''],
+ ['closer','Closer','$89','/mo','Weekly check-ins','A 30-minute check-in every week plus a longer monthly session, messages answered within one working day, and someone in your corner every week.','Most dads choose this'],
+ ['always','Always there','$179','/mo','24/7 WhatsApp','Everything in Closer, plus WhatsApp access at any hour, from the first scan through labor night to 3 a.m. in week two. I keep this to five dads at a time so I can always answer.','']];
+$('#tiers').innerHTML=TIERS.map(([k,n,p,u,sub,d,badge])=>`<div class="card"${badge?' style="border:2px solid var(--coral)"':''}>${badge?`<p class="note" style="color:var(--coral);font-weight:700;margin:0 0 6px">${badge}</p>`:''}<div class="pricebox"><h3>${n}</h3><span class="price">${p}<span class="note">${u}</span></span></div><p><b>${sub}.</b> ${d}</p>${k==='always'?`<p class="note" style="margin:-4px 0 12px"><b style="color:var(--coral)">${ALWAYS_LEFT>0?ALWAYS_LEFT+' of '+ALWAYS_TOTAL+' places open':'All '+ALWAYS_TOTAL+' places taken'}</b>${ALWAYS_LEFT>0?'':' · join the waitlist and I\'ll write as soon as one opens'}</p>`:''}<a class="btn${badge?'':' ghost'}" href="#coachForm" data-tier="${k}">${k==='always'&&ALWAYS_LEFT<1?'Join the waitlist':'Choose '+n}</a></div>`).join('');
+const TROWS=[['Welcome call (60 min)','✓','✓','✓'],['Monthly session (45 min)','✓','✓','✓'],['Weekly check-in (30 min)','From week 36 and the first 2 weeks after birth','Every week','Every week'],['Messages (WhatsApp or email)','Reply within 2 working days','Reply within 1 working day','Any hour, 24/7'],['Labor night','Check-in messages','Check-in messages','I\'m on WhatsApp with you'],['First 12 weeks after birth','Every 2 weeks','Every week','Every week + daily messages in weeks 1–2'],['Birth plan review','✓','✓','✓'],['Tools, resources and reading picked for you','✓','✓','✓'],['Licensed therapist when needed','Arranged, priced separately','Arranged, priced separately','Arranged fast, priced separately']];
+$('#tierT tbody').innerHTML=TROWS.map(r=>`<tr>${r.map((c,i)=>i?`<td${c==='✓'?' class="yes"':''}>${c}</td>`:`<td><b>${c}</b></td>`).join('')}</tr>`).join('');
+document.addEventListener('click',e=>{const x=e.target.closest('[data-intro]');if(x){$('#cWhat').selectedIndex=0;setTimeout(()=>$('#cName').focus(),300)}});
+$('#tiers').addEventListener('click',e=>{const a=e.target.closest('[data-tier]');if(!a)return;const i={steady:1,closer:2,always:3}[a.dataset.tier];$('#cWhat').selectedIndex=i;setTimeout(()=>$('#cName').focus(),300)});
+const TOP=['Hospital practices that worry me','Fear of the birth','Money and work','Our relationship','Sex and intimacy','Family pressure','Feeling left out','Feeling low or angry','Her mood','Leave and rights','The birth plan','Being a good dad','Loss or a hard diagnosis'];
+let cdraft=store('coach')||{t:[]};
+$('#topics').innerHTML=TOP.map(t=>`<button type="button" aria-pressed="${cdraft.t.includes(t)}">${t}</button>`).join('');
+$('#topics').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);cdraft.t=on?[...cdraft.t,b.textContent]:cdraft.t.filter(x=>x!==b.textContent);store('coach',cdraft)});
+['cName','cDue','cMsg'].forEach(f=>{if(cdraft[f])$('#'+f).value=cdraft[f];$('#'+f).addEventListener('input',()=>{cdraft[f]=$('#'+f).value;store('coach',cdraft)})});
+$('#cBtn').addEventListener('click',()=>{
+ if(!$('#cName').value.trim()){$('#cOut').innerHTML='<p class="warn">Please add your name.</p>';return}
+ if(!$('#cAgree').checked){$('#cOut').innerHTML='<p class="warn">Please tick the box to confirm you understand coaching is peer support.</p>';return}
+ const r=rg(),w=$('#cWhat').value;
+ const msg=`Hi Nabil, I'm ${$('#cName').value.trim()}${cur?` (${cur.s?cur.s+', ':''}${r.name})`:''}. I'd like: ${w}.${$('#cDue').value?' Our due date is '+$('#cDue').value+'.':''}${cdraft.t.length?'\nOn my mind: '+cdraft.t.join(', ')+'.':''}${$('#cMsg').value.trim()?'\n\n'+$('#cMsg').value.trim():''}${w.startsWith('Birth')?'\n\nOur plan:\n'+$('#planOut').textContent:''}`;
+ const key=w.startsWith('Steady')?'steady':w.startsWith('Closer')?'closer':w.startsWith('Always')?'always':w.startsWith('One')?'single':w.startsWith('Birth')?'plan':'';
+ $('#cOut').innerHTML=`<p>Here's your message. Send it by email to <b>nabilrahman.rubab@gmail.com</b> or on WhatsApp to <b>@nabilnow</b>, and I'll reply with times.</p><pre class="out">${esc(msg)}</pre><p>${key&&PAY[key]?`<a class="btn" href="${PAY[key]}" target="_blank" rel="noopener">Pay securely</a> `:''}<button type="button" class="ghost" id="cCopy">Copy message</button> <span class="note" id="cCopied" aria-live="polite"></span></p>`;
+ $('#cCopy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(msg);$('#cCopied').textContent='Copied.'}catch(e){$('#cCopied').textContent='Select the text and copy it by hand.'}});
+});
+
+
+/* ===== The course ===== */
+const L=[
+ {k:'m0',n:'Month 0',t:'You just found out',w:'Weeks 0–4',wk:[0,4],
+  hap:'A positive test. She may feel nothing yet, or already be exhausted and queasy. You might feel thrilled, terrified, numb, or all three in one afternoon. All normal. Nothing is expected of you yet except to show up.',
+  todo:['Say out loud: "I\'m in this with you." Then ask her how she feels before saying how you feel','Help her book the first prenatal appointment (usually around 8 weeks)','Make sure she has a prenatal vitamin with folic acid','Stop drinking around her and take over cleaning anything with strong smells or chemicals, plus the cat litter','Agree together: who do we tell, and when?','Start a shared notes doc for questions for the doctor or midwife'],
+  learn:['Early pregnancy often means deep fatigue and nausea, even before any bump. It\'s real work for her body.','Many couples wait until after the first scan to tell people, because early miscarriage is common. It\'s your shared choice.','Look at your own health now: sleep, alcohol, exercise. You\'re about to need all of it.'],
+  say:'"Whatever you\'re feeling about this is OK. I\'m here, and we\'ll work it out together."',
+  next:'Next month: nausea and exhaustion may peak, and you\'ll go to the first appointment. Learn what helps with nausea before it hits.',
+  tools:[['home','Week-by-week view'],['you','Your mental health']]},
+ {k:'m1',n:'Month 1',t:'The secret month',w:'Weeks 5–8',wk:[5,8],
+  hap:'The heart starts beating. She may feel sick at any hour, need naps, and cry at ads. Few people know yet, so you\'re her main support.',
+  todo:['Go to the first appointment and the dating scan if you can','Keep crackers and water by her bed; cook bland food; handle smells','Take one household job off her plate completely','Learn the "call now" signs: heavy bleeding, one-sided pain, can\'t keep fluids down','Start a simple baby budget: what we earn, spend, and will need'],
+  learn:['Severe vomiting (hyperemesis) is a medical issue, not just morning sickness. Call her provider if she can\'t keep fluids down.','Ask the provider what prenatal tests are offered and when, so you can decide calmly later.'],
+  say:'"What would make today easier? I\'ll handle it."',
+  next:'Next month: screening tests and decisions about telling family and work. Read up on the tests together.',
+  tools:[['birthday','Go-now signs'],['plan','Start your notes in the birth plan']]},
+ {k:'m2',n:'Month 2',t:'First scan, first decisions',w:'Weeks 9–13',wk:[9,13],
+  hap:'Seeing the baby on a screen can make it land. Nausea often starts easing by the end. Fear of loss is common until this stage ends.',
+  todo:['Talk through screening tests together: what each can and can\'t tell you, and what you\'d do with the result','Plan how to tell family, and how to set boundaries early','Find out your leave rights at work (and hers): FMLA, state paid leave, employer policy','Check your health insurance: deductible, in-network hospitals, and whether a breast pump is covered'],
+  learn:['In the US, most health plans must cover a breast pump. Ask your insurer now which models and suppliers are covered.','State paid family leave exists in 13 states plus DC; check whether yours is one.'],
+  say:'"Whatever the test says, we decide together."',
+  next:'Next month: energy usually returns. It\'s the best window for planning, budgeting and time together.',
+  tools:[['rights','Leave & rights for your state'],['watch','Billing traps to know early']]},
+ {k:'m3',n:'Month 3',t:'The good window',w:'Weeks 14–17',wk:[14,17],
+  hap:'Second trimester. Many people feel much better. A small bump appears. Round-ligament pains (sharp, brief, low) are common.',
+  todo:['Plan a trip or a regular date night; protect your relationship now','Make the budget real: childcare, leave pay, the big items','Ask the hospital for its financial assistance policy, just in case','Start a walking habit together','Start thinking about names (and check your state\'s naming rules)'],
+  learn:['This is the easiest time to get admin done. Future you will thank you.','Nonprofit hospitals must have financial assistance policies, and many eligible families never hear about them.'],
+  say:'"Let\'s make a list of everything we\'re worried about, then pick three to tackle this month."',
+  next:'Next month: the anatomy scan and the first kicks. Book a birth class; they fill up.',
+  tools:[['rights','Naming laws'],['gear','Registry']]},
+ {k:'m4',n:'Month 4',t:'Kicks and the anatomy scan',w:'Weeks 18–22',wk:[18,22],
+  hap:'She\'ll feel flutters, then kicks. The anatomy scan checks baby\'s organs and growth. Back ache and sleep trouble begin.',
+  todo:['Go to the anatomy scan','Book a birth or antenatal class together (and use this site alongside it)','Start the baby registry; keep it short (see the lifesavers list)','Feel for kicks with your hand; talk to the baby, who can hear you now','Buy her a pregnancy pillow if sleep is getting hard'],
+  learn:['The scan can bring unexpected news. If it does, you don\'t have to decide anything in the room; ask for time and a follow-up.','Most baby gear is optional; the car seat and a safe sleep space are not.'],
+  say:'"Can I feel? ... Hi, it\'s Dad."',
+  next:'Next month: the glucose test, swelling, and the time to tour the hospital and pick a pediatrician.',
+  tools:[['gear','Lifesavers vs dust'],['shop','Dad shop']]},
+ {k:'m5',n:'Month 5',t:'Building the nest',w:'Weeks 23–27',wk:[23,27],
+  hap:'Glucose test for gestational diabetes. Heartburn, swelling, practice contractions. You may get a nesting urge too.',
+  todo:['Learn the urgent warning signs by heart (especially headache, vision changes, sudden swelling)','Tour the hospital or birth center; ask the tour questions on the Hospital page','Choose the baby\'s doctor','Ask the hospital: do you drug test, with consent, and who sees results?','Read the hospital stay and Watch-for pages together'],
+  learn:['Sudden swelling of face or hands, a bad headache or seeing spots can be pre-eclampsia. Call straight away.','Knowing who will knock on your door at the hospital removes half the stress of the stay.'],
+  say:'"I\'ve got the tour booked. Write down anything you want me to ask."',
+  next:'Next month: the third trimester. Time to draft the birth plan and learn infant CPR.',
+  tools:[['hospital','Hospital stay'],['watch','Watch for']]},
+ {k:'m6',n:'Month 6',t:'Third trimester begins',w:'Weeks 28–31',wk:[28,31],
+  hap:'She\'s tired again, breathless, uncomfortable. Appointments come every two weeks. Baby\'s movements get strong and patterned.',
+  todo:['Draft the birth plan together, including your role and visitor rules','Learn baby\'s movement pattern; know that a change means call','Take an infant CPR class','Submit leave paperwork at work','Start batch-cooking for the freezer','Order the breast pump through insurance if she plans to pump'],
+  learn:['Your role in the plan: know it so well you can speak for her when she can\'t.','Vaccines are offered in pregnancy (like Tdap for whooping cough). Help her keep track.'],
+  say:'"Tell me what matters most to you on the day. I\'ll make sure people hear it."',
+  next:'Next month: packing season. Bags, car seat, and the visitor conversation with family.',
+  tools:[['plan','Birth plan builder'],['you','Meal plan']]},
+ {k:'m7',n:'Month 7',t:'Pack and prepare',w:'Weeks 32–35',wk:[32,35],
+  hap:'Very uncomfortable now: peeing constantly, poor sleep, maybe stopping work. Nervous, impatient, or both.',
+  todo:['Pack her bag, your bag and baby\'s bag','Install the car seat and get it checked by a certified technician','Tell family your visitor rules now, kindly and clearly','Save the triage number in both phones','Fill the freezer; stock up on pads, snacks and diapers'],
+  learn:['A car seat check is often free at fire stations or hospitals; most seats are installed with at least one mistake.','Setting boundaries before the birth is far easier than at the hospital door.'],
+  say:'"We love you and can\'t wait for you to meet the baby. We\'ll call you when we\'re ready for visitors."',
+  next:'Next month: any day now. Practice the drive and learn exactly when to go in.',
+  tools:[['bag','Bags checklist'],['shop','Shop the lifesavers']]},
+ {k:'m8',n:'Month 8',t:'Any day now',w:'Weeks 36–40+',wk:[36,41],
+  hap:'Full term from 37 weeks. Labor can start any time from 37 to 42 weeks; few babies come on the due date.',
+  todo:['Bring the birth plan to the 36-week visit; ask when they want you to come in (5-1-1, 4-1-1?)','Practice the drive at night; know the entrance and parking','Keep the tank full and your phone charged','Learn the go-now signs; practice the contraction timer','Ask what happens if she goes past her due date (induction options)','Rest. Really.'],
+  learn:['Early labor can last many hours and is usually best spent at home.','If her waters break, she\'s bleeding, the baby moves less, or she\'s in constant pain: go in, whatever the contractions are doing.'],
+  say:'"Everything\'s ready. All you need to do is rest. I\'ve got the rest."',
+  next:'Next: delivery day. Read the Birth day page twice this week.',
+  tools:[['birthday','Birth day'],['birthday','Contraction timer']]},
+ {k:'d',n:'Delivery day',t:'The day itself',w:'Labor and birth',wk:[41,41],
+  hap:'Your job: protect her calm, carry the logistics, speak up for what she wants, and stay with her. You don\'t need to know medicine.',
+  todo:['Time contractions; call when the provider\'s rule is met','Drive steadily; hand over the plan at check-in','Water after every contraction, counter-pressure, cool cloth, low lights','Use the BRAIN questions for any non-urgent decision','If she can\'t do skin-to-skin, ask to do it yourself','Send one message to family, then put the phone away'],
+  learn:['"I can\'t do this" often means birth is close. Stay close and steady.','If the room fills with people, stand by her head and hold her hand; ask what happened later.'],
+  say:'"You are doing it. One at a time. I\'m right here."',
+  next:'Next: the hospital stay, with a stream of visitors, tests and forms.',
+  tools:[['birthday','Every situation'],['watch','Watch for']]},
+ {k:'h',n:'Days 1–3',t:'The hospital stay',w:'After the birth',wk:[42,42],
+  hap:'Nurses every few hours, the baby\'s doctor, a lactation consultant, the birth-certificate clerk, maybe a photographer. Night two is often a feeding marathon.',
+  todo:['Be the gatekeeper: cluster checks, hold visitors and sales visits','Ask for the lactation consultant if feeding hurts or isn\'t working','Learn diapers, swaddling and burping from the nurses','Do the paperwork: birth certificate, Social Security, paternity form if unmarried','Ask for an itemized bill later; read any out-of-network consent form before signing','Write down the after-hours number and the first pediatrician visit (usually in 1–3 days)'],
+  learn:['You can decline the photographer and sales visits; most medical tests can be refused only by signing a form, so ask questions first.','Most feeding problems early on aren\'t tongue-tie; a lactation consultant and pediatrician should assess before any procedure is considered.'],
+  say:'"Can you tell me what this is for, and what happens if we wait?"',
+  next:'Next: the first two weeks home. Survival mode. Plan your night shifts now.',
+  tools:[['hospital','Who knocks'],['rights','Paperwork & paternity']]},
+ {k:'p1',n:'Weeks 1–2',t:'Survival mode at home',w:'First two weeks',wk:[43,44],
+  hap:'Bleeding, pain, milk coming in around day 3–5, baby blues for most moms. Very little sleep for anyone. It is meant to feel hard.',
+  todo:['Take every non-feeding job: diapers, burping, settling, bathing, laundry','Bring water and a snack to every feed','Split the night into shifts so each of you gets one 4–5 hour stretch','Watch her warning signs: heavy bleeding, fever, leg pain, chest pain, low mood beyond two weeks','If feeding is hard, get a lactation consultant early; if she\'s pumping, call insurance about a hospital-grade rental if needed','Do skin-to-skin with the baby yourself'],
+  learn:['Count wet and dirty diapers; your pediatrician will tell you what\'s enough for each day.','Fed is the goal. Formula, pumping, breastfeeding, or a mix are all valid.'],
+  say:'"You\'re doing an amazing job. Sleep; I\'ve got the next feed."',
+  next:'Next: weeks 3–6. A rhythm starts to appear, and her postpartum check-up arrives.',
+  tools:[['you','Your mood'],['coaching','Talk to me']]},
+ {k:'p2',n:'Weeks 3–6',t:'Finding a rhythm',w:'Weeks 3–6',wk:[45,46],
+  hap:'Feeds get slightly more predictable. Visitors fade. Exhaustion becomes cumulative. Her body is still healing.',
+  todo:['Go with her to the postpartum check-up if you can','Do an honest mood check on yourself: anger, withdrawal, drinking more, numbness?','Get out of the house daily, even a 20-minute walk','Plan your return to work and how nights will work then','Keep one small ritual for the two of you, even ten minutes'],
+  learn:['About 1 in 10 dads get depressed in pregnancy or the first year. It often looks like irritability, not sadness.','Intimacy comes back slowly and on her timeline; talk about it kindly, without pressure.'],
+  say:'"How are you, really? And here\'s how I am, honestly."',
+  next:'Next: months 2–3. Back to work, new routines, and the stretch where dad depression often appears.',
+  tools:[['you','Mental health'],['coaching','Licensed therapist option']]},
+ {k:'p3',n:'Months 2–3',t:'The new normal',w:'Weeks 7–12',wk:[47,52],
+  hap:'Smiles arrive. So does going back to work. Sleep is still broken. Dad depression often shows up between 3 and 6 months.',
+  todo:['If she\'s going back to work and pumping: know her rights. In the US, the federal PUMP Act requires break time and a private, non-bathroom space for most nursing employees for a year','Own a regular night or morning shift','Plan one hour off a week for each of you','Book your own check-in with a doctor if your mood is low','Write down what you\'ve learned; it\'s the start of your own fatherhood story'],
+  learn:['Ask for help before you think you need it; you are not supposed to do this alone.','You made it through the hardest stretch. It keeps getting easier.'],
+  say:'"We did this. Let\'s talk about what we want the next year to look like."',
+  next:'You\'ve finished the course. Our closing call is where we look back and plan ahead.',
+  tools:[['coaching','Closing call'],['traditions','Traditions to borrow']]}
+];
+let done=store('course')||{},ticks=store('ctick')||{},cur_l=store('clesson')||'m0';
+const dueToLesson=d=>{const due=new Date(d+'T12:00');if(isNaN(due))return null;const wk=40-Math.round((due-Date.now())/(7*864e5));return wk>40?L.find(l=>l.k==='p1'&&wk<=42)||L.find(l=>wk>=l.wk[0]&&wk<=l.wk[1])||L[L.length-1]:L.find(l=>wk>=l.wk[0]&&wk<=l.wk[1])||L[0]};
+function renderCourse(){
+ const i=Math.max(0,L.findIndex(l=>l.k===cur_l)),l=L[i],n=L.filter(x=>done[x.k]).length;
+ $('#cProg').style.width=(n/L.length*100)+'%';$('#cProgT').textContent=`${n} of ${L.length} lessons done`;
+ $('#cList').innerHTML=L.map((x,j)=>`<button type="button" class="ls${x.k===l.k?' on':''}" data-l="${x.k}" aria-current="${x.k===l.k?'step':'false'}"><span class="dot${done[x.k]?' ok':''}">${done[x.k]?'✓':j}</span><span><b>${x.n}</b><br><span class="note">${x.t}</span></span></button>`).join('');
+ $('#cLesson').innerHTML=`<p class="note">Lesson ${i} of ${L.length-1} · ${l.w}</p><h2>${l.n}: ${l.t}</h2><p>${l.hap}</p>
+ <div class="card" style="margin:16px 0"><h3>Do this month</h3>${l.todo.map((t,j)=>`<label class="opt"><input type="checkbox" data-t="${l.k}-${j}" ${ticks[l.k+'-'+j]?'checked':''}> <span>${t}</span></label>`).join('')}</div>
+ <h3>Good to know</h3><ul class="ck">${l.learn.map(x=>`<li>${x}</li>`).join('')}</ul>
+ <div class="tip" style="margin-top:16px"><b>Try saying:</b> <span class="say">${l.say}</span></div>
+ <div class="card" style="background:var(--tint);margin-top:16px"><h3>Coming next</h3><p style="margin:0">${l.next}</p></div>
+ <p style="margin-top:14px"><b>Tools for this lesson:</b> ${l.tools.map(([k,t])=>`<a href="#${k}">${t}</a>`).join(' · ')} · <a href="#coaching">Talk it through with me</a></p>
+ <div class="pager"><button type="button" class="ghost" id="cPrev" ${i===0?'disabled':''}>Previous</button><button type="button" id="cDone">${done[l.k]?'Done ✓ Next lesson':'Mark done and continue'}</button></div>`;
+ const on=$('#cList .on');if(on){const cl=$('#cList');if(cl.scrollWidth>cl.clientWidth)cl.scrollLeft=on.offsetLeft-cl.offsetLeft-16}
+}
+$('#cList').addEventListener('click',e=>{const b=e.target.closest('[data-l]');if(!b)return;cur_l=b.dataset.l;store('clesson',cur_l);renderCourse();$('#cLesson').scrollIntoView({block:'start'})});
+$('#cLesson').addEventListener('change',e=>{const k=e.target.dataset.t;if(!k)return;ticks[k]=e.target.checked;store('ctick',ticks)});
+$('#cLesson').addEventListener('click',e=>{const i=L.findIndex(l=>l.k===cur_l);
+ if(e.target.id==='cDone'){done[cur_l]=true;store('course',done);if(i<L.length-1)cur_l=L[i+1].k;store('clesson',cur_l);renderCourse();$('#cLesson').scrollIntoView({block:'start'})}
+ if(e.target.id==='cPrev'&&i>0){cur_l=L[i-1].k;store('clesson',cur_l);renderCourse();$('#cLesson').scrollIntoView({block:'start'})}});
+const cdue=store('cdue');if(cdue)$('#courseDue').value=cdue;
+$('#courseDue').addEventListener('change',e=>{store('cdue',e.target.value);const l=dueToLesson(e.target.value);if(l){cur_l=l.k;store('clesson',cur_l);$('#dueMsg').textContent=`You're in ${l.n}: ${l.t}. We've opened that lesson; earlier ones are there to catch up on.`;renderCourse()}});
+$('#stages').innerHTML=W.map(s=>`<details><summary>${s.t}</summary><div><div class="grid"><div><h3>Her</h3><p>${s.her}</p></div><div><h3>Watch for</h3><p>${s.watch}</p></div><div><h3>You</h3><ul class="ck">${s.do.map(x=>`<li>${x}</li>`).join('')}</ul></div><div><h3>Your feelings</h3><p>${s.feel}</p></div></div></div></details>`).join('');
+renderCourse();
+
+/* ===== Watch for ===== */
+const WATCH=[
+ ['Drug tests without informed consent, and reports to child welfare',
+  'Investigations by The Marshall Project found hospitals routinely drug test pregnant patients, often without their knowledge, using cheap urine screens with false-positive rates reported as high as 50%. Positives have been triggered by poppy seeds, prescribed medicines, and even drugs the hospital itself gave during labor, and some led to child welfare investigations. Federal law and most state laws don\'t require this testing, and medical bodies advise getting consent first. Some hospital systems (e.g. in Boston and New Haven) have changed their policies after these reports.',
+  ['At pre-registration or the hospital tour, ask: "Do you drug test mothers or newborns? Is it with our consent? Do you confirm positives with a lab test? Who sees the results?"','Tell staff about every medication, including anything given in labor, and foods like poppy seeds.','If a test is positive, ask in writing for a confirmatory lab test before any report; ask for copies of results.','If child welfare contacts you, stay calm, be polite, and speak to a family-law attorney.'],
+  [['The Marshall Project: hospitals gave meds, then reported positive tests (2024)','https://www.themarshallproject.org/2024/12/11/pregnant-hospital-drug-test-medicine'],['The Marshall Project: false positives and newborn separations (2024)','https://themarshallproject.org/2024/09/09/drug-test-pregnancy-pennsylvania-california'],['The Marshall Project: what to do about a flawed test (2026)','https://themarshallproject.org/2026/02/13/tips-flawed-drug-test-birth']]],
+ ['Bills sent to families who qualified for free or discounted care',
+  'Nonprofit hospitals must have a financial assistance ("charity care") policy to keep their tax exemption. Yet a KFF Health News analysis found 45% of nonprofit hospital organizations routinely billed patients whose incomes were low enough to qualify, about $2.7 billion in a year, and a 2023 survey found more than half of eligible patients got no information about financial help. Eligibility can reach well into middle incomes at some hospitals.',
+  ['Before birth, ask the hospital for its financial assistance policy and application (it is usually on their website).','Apply even after you\'ve been billed, and ask whether they refund what you already paid.','Don\'t put a big hospital bill on a credit card or payment plan until you\'ve checked eligibility.'],
+  [['KFF Health News: patients eligible for charity care instead get big bills','https://kffhealthnews.org/MTAwMDQ5Ng'],['KFF: hospital charity care, how it works','https://www.kff.org/health-costs/issue-brief/hospital-charity-care-how-it-works-and-why-it-matters/'],['CBS News: loopholes in charity care','https://www.cbsnews.com/news/hospital-bills-charity-care-programs/']]],
+ ['Surprise bills, waiver forms and billing errors',
+  'Under the federal No Surprises Act, you\'re protected from "balance bills" for emergency care and for out-of-network providers (such as an anesthesiologist or a neonatologist) working at an in-network hospital, and you never have to sign a form giving those protections up. If you\'re uninsured or paying yourself, providers must usually give you a good faith estimate, and you may be able to dispute a bill that\'s at least $400 more than the estimate. Your baby is a separate patient with a separate bill.',
+  ['Read any consent form about "out-of-network" care before signing; you can decline.','Ask for an itemized bill for her and for the baby, and compare it to your insurer\'s statement.','Add the baby to your insurance within your plan\'s deadline (often 30 days).','If uninsured, ask for a good faith estimate in writing before a planned birth or induction.'],
+  [['CMS: Know your medical bill rights','https://www.cms.gov/initiatives/your-patient-rights/medical-bill-rights/know-your-rights'],['CMS: No Surprises Act key protections','https://www.cms.gov/files/document/nsa-keyprotections.pdf'],['CMS: Good faith estimates','https://www.cms.gov/nosurprises/consumers/good-faith-estimate']]],
+ ['Marketing dressed up as care',
+  'Many hospitals hand out "discharge bags" sponsored by formula companies, and private companies sell photos and products in your room. A 2008 American Journal of Public Health study linked commercial discharge packs to shorter exclusive breastfeeding and called them part of a long-running formula marketing campaign; a 2013 study found shorter exclusive breastfeeding with commercial bags (about 6 weeks versus 8). The evidence isn\'t unanimous: an earlier 1997 trial found no effect. Either way, a sponsored bag is advertising, not medical advice.',
+  ['You can decline the bag, the photographer, and any sales visit. "No thank you" is enough.','If you need or choose formula, that\'s a fine decision; make it with your pediatrician or lactation consultant, not a brand.','Put a "no sales visits, please" note on the door.'],
+  [['Rosenberg et al., American Journal of Public Health (2008)','https://pmc.ncbi.nlm.nih.gov/articles/PMC2376885'],['Bai et al., Alternative hospital gift bags and breastfeeding (2013)','https://pmc.ncbi.nlm.nih.gov/articles/PMC4045267'],['Dungy et al., Archives of Pediatrics & Adolescent Medicine (1997)','https://jamanetwork.com/journals/jamapediatrics/articlepdf/518437/archpedi_151_7_015.pdf']]],
+ ['Being ignored, scolded, or pushed into procedures',
+  'The Giving Voice to Mothers study (2,138 US women, 2019) found one in six reported mistreatment during maternity care: most commonly being shouted at or scolded, and having requests ignored or refused. Rates were 28.1% for hospital births versus 5.1% at home, higher for women of color, and higher when there were unexpected interventions or disagreements with providers. Mistreatment includes losing the ability to make decisions about your own care.',
+  ['Agree before labor that you\'ll be her voice when she can\'t speak; know her plan by heart.','Use the BRAIN questions: Benefits, Risks, Alternatives, Intuition, what if we wait (Nothing)?','If you\'re not being heard, ask for the charge nurse, then the patient advocate; note names and times.','Afterwards, you can file a formal grievance with the hospital and, if needed, your state health department.'],
+  [['Vedam et al., The Giving Voice to Mothers study, Reproductive Health (2019)','https://pmc.ncbi.nlm.nih.gov/articles/PMC6558766']]]
+];
+$('#watchList').innerHTML=WATCH.map(([t,d,act,src],i)=>`<details id="wt${i}"${i===0?' open':''}><summary>${t}</summary><div><p>${d}</p><h3 style="font-size:19px">What you can do</h3><ul class="ck">${act.map(a=>`<li>${a}</li>`).join('')}</ul><p class="note" style="margin-top:10px"><b>Sources:</b> ${src.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${n}</a>`).join(' · ')}</p><p><button type="button" class="ghost" data-w="${i}">Add to my consultation</button> <span class="note" aria-live="polite" id="wAdd${i}"></span></p></div></details>`).join('');
+$('#watchList').addEventListener('click',e=>{const b=e.target.closest('[data-w]');if(!b)return;const t=WATCH[+b.dataset.w][0];const m=$('#cMsg');if(!m.value.includes(t)){m.value=(m.value?m.value+'\n':'')+'• I want to talk about: '+t;cdraft.cMsg=m.value;store('coach',cdraft)}$('#wAdd'+b.dataset.w).innerHTML='Added. <a href="#coaching">See my notes</a>'});
+
+/* ===== Sources ===== */
+const SRC=[['CDC Hear Her: urgent maternal warning signs','https://www.cdc.gov/hearher/maternal-warning-signs/'],['AAP: A parent\'s guide to safe sleep (HealthyChildren.org)','https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/a-parents-guide-to-safe-sleep.aspx'],['Paternal depression meta-analysis, J Affect Disord 2016','https://pubmed.ncbi.nlm.nih.gov/27475890/'],['Paternal prenatal and postpartum depression, J Affect Disord 2020','https://pubmed.ncbi.nlm.nih.gov/31757623/'],['Paternal perinatal anxiety meta-analysis, 2021','https://pubmed.ncbi.nlm.nih.gov/33632067/'],['Depression and anxiety in both parents, JAMA Netw Open 2022','https://pmc.ncbi.nlm.nih.gov/articles/PMC9233234'],['Weight gain in new fathers (Saxbe et al., via BPS Research Digest)','https://bps.org.uk/research-digest/weight-gain-new-fathers-real-phenomenon-thats-been-subjected-striking-lack-research'],['Expectant primate fathers gain weight, Biology Letters 2006','https://pmc.ncbi.nlm.nih.gov/articles/PMC1483903'],['Father skin-to-skin after cesarean, Birth 2007','https://pubmed.ncbi.nlm.nih.gov/17542814/'],['Father skin-to-skin after cesarean, Acta Pediatrica 2021','https://pmc.ncbi.nlm.nih.gov/articles/PMC8246930'],['Hewlett: Intimate Fathers (Aka paternal care)','https://press.umich.edu/isbn/9780472082032'],['Couvade (Encyclopaedia Britannica)','https://www.britannica.com/topic/couvade'],['State paid family leave laws, mid-2026 (Troutman Pepper)','https://www.troutman.com/insights/the-expanding-patchwork-of-state-paid-family-and-medical-leave-laws-what-employers-should-know/'],['Georgia DPH: Paternity acknowledgment','https://dph.georgia.gov/node/35716'],['NY Courts: Acknowledgment of Paternity','https://nycourts.gov/CourtHelp/Family/paternityAcknowledgment.shtml'],['Minnesota: refusal or delay of newborn screening','https://www.health.state.mn.us/people/newbornscreening/materials/legalforms/refusaldelay.pdf'],['Texas: newborn hearing screening rule','https://regulations.justia.com/states/texas/title-25/part-1/chapter-37/subchapter-s/section-37-503'],['NHS: antenatal classes and paternity leave (GOV.UK)','https://www.gov.uk/paternity-pay-leave'],['The Marshall Project: hospital drug testing of new mothers','https://www.themarshallproject.org/2024/12/11/pregnant-hospital-drug-test-medicine'],['KFF Health News: charity-care-eligible patients billed','https://kffhealthnews.org/MTAwMDQ5Ng'],['CMS: No Surprises Act','https://www.cms.gov/initiatives/your-patient-rights/medical-bill-rights/know-your-rights'],['Rosenberg et al. 2008: discharge packs and breastfeeding','https://pmc.ncbi.nlm.nih.gov/articles/PMC2376885'],['Vedam et al. 2019: Giving Voice to Mothers','https://pmc.ncbi.nlm.nih.gov/articles/PMC6558766']];
+$('#srcList').innerHTML=SRC.map(([t,u])=>`<li><a href="${u}" target="_blank" rel="noopener">${t}</a></li>`).join('');
+
+/* ===== Region apply ===== */
+function applyRegion(){const r=rg();
+ $('#regionPill').textContent=cur?`Region: ${(cur.s?cur.s+', ':'')+r.name} · change`:'Choose your state or country';
+ const rb=cur?`<span>Showing guidance for <b>${(cur.s?cur.s+', ':'')+r.name}</b>.</span> <button type="button" class="ghost" data-region style="min-height:40px;padding:6px 12px">Change</button>`:`<span>Showing general US guidance. Laws, leave and hospital rules differ by state.</span> <button type="button" class="ghost" data-region style="min-height:40px;padding:6px 14px">Choose your state</button>`;
+ document.querySelectorAll('.rbar').forEach(e=>e.innerHTML=rb);
+ document.querySelectorAll('.emNum').forEach(e=>e.textContent=r.em);document.querySelectorAll('.rName').forEach(e=>e.textContent=r.name);
+ $('#helpLines').innerHTML=r.lines;$('#watchRegion').innerHTML=cur?.c==='us'?`<b class="tag">${cur.s||'United States'}:</b> these examples come from US research and law. State rules on drug testing and reporting differ; ask your hospital for its written policy.`:`<b class="tag">${r.name}:</b> these examples come from US research and law. Similar issues exist elsewhere; ask your hospital how it handles testing, billing and consent where you live.`;$('#mhLine').innerHTML=r.lines;
+ $('#bdRegion').innerHTML=`<b class="tag">${r.name}:</b> ${r.triage} Emergency: <b>${r.em}</b>.`;
+ $('#hospRegion').innerHTML=`<b class="tag">${r.name}${cur?.s?' · '+cur.s:''}:</b> ${r.newborn}${cur?.s&&STATE_EXTRA[cur.s]?' '+STATE_EXTRA[cur.s]:''}`;
+ $('#regList').innerHTML=r.reg.map(([n,u,d])=>`<div class="card"><h3>${n}</h3><p>${d}</p><a class="btn ghost" href="${u}" target="_blank" rel="noopener">Open ${n.split(' ')[0]}</a></div>`).join('');
+ renderRights();renderShop();renderPlan();}
+const cs=$('#selC');cs.innerHTML='<option value="">Choose…</option>'+Object.entries(R).map(([k,v])=>`<option value="${k}">${v.name}</option>`).join('');
+function fillSub(){const r=R[cs.value];if(r&&r.sub){$('#subWrap').hidden=false;$('#subL').textContent=r.subL;$('#selS').innerHTML=r.sub.map(x=>`<option>${x}</option>`).join('')}else $('#subWrap').hidden=true}
+cs.addEventListener('change',fillSub);
+const dlg=$('#regionDlg'),show=d=>{try{d.showModal()}catch(e){d.setAttribute('open','')}};
+function openRegion(){try{$('#menuDlg').close()}catch(e){}if(cur){cs.value=cur.c;fillSub();if(cur.s)$('#selS').value=cur.s;$('#agree').checked=true}else fillSub();show(dlg)}
+$('#regionPill').addEventListener('click',openRegion);document.addEventListener('click',e=>{if(e.target.closest('[data-region]'))openRegion()});
+$('#regionForm').addEventListener('submit',e=>{if(!cs.value){e.preventDefault();$('#rdErr').textContent='Please choose a country.';return}$('#rdErr').textContent='';cur={c:cs.value,s:R[cs.value].sub?$('#selS').value:''};store('region',cur);applyRegion()});
+$('#helpBtn').addEventListener('click',()=>show($('#helpDlg')));$('#helpClose').addEventListener('click',()=>$('#helpDlg').close());
+
+
+/* ===== Menu & search ===== */
+const mD=$('#menuDlg'),sD=$('#searchDlg');
+$('#menuBtn').addEventListener('click',()=>show(mD));$('#mClose').addEventListener('click',()=>mD.close());
+mD.addEventListener('click',e=>{if(e.target.closest('a'))mD.close()});
+$('#secNav').addEventListener('click',e=>{if(e.target.id==='moreLink'){e.preventDefault();show(mD)}});
+const IDX=[];
+const add=(t,s,v,id,extra)=>IDX.push({t,s,v,id,extra,txt:(t+' '+s+' '+(extra||'')).toLowerCase()});
+VIEWS.forEach(([k,t])=>add(t,'Page',k));
+SC.forEach(([t,d],i)=>add(t,'Birth day · what to do',  'birthday','sc'+i,d));
+HOSP.forEach((r,i)=>add(r[0],'Hospital stay · can you decline?','hospital','h'+i,r[1]+' '+r[2].replace(/<[^>]+>/g,'')));
+SURP.forEach(([t,d])=>add(t,'Hospital stay · surprises','hospital',null,d));
+WATCH.forEach(([t,d],i)=>add(t,'Watch for','watch','wt'+i,d));
+L.forEach(l=>add(`${l.n}: ${l.t}`,'The course · '+l.w,'course','L:'+l.k,l.hap+' '+l.todo.join(' ')+' '+l.learn.join(' ')));
+TRAD.forEach(([t,d])=>add(t,'Traditions','traditions',null,d));
+JOBS.forEach(([t,d])=>add(t,'Birth day · your jobs','birthday',null,d));
+[['Breast pump','Insurance usually covers one; hospital-grade rental if supply or NICU','course','L:m2','pump pumping milk supply insurance'],['Tongue-tie','Get a lactation consultant and pediatrician to assess first','course','L:h','tongue tie latch frenotomy'],['Postpartum depression (dads too)','Signs, when to get help, licensed therapists','you',null,'sad angry depressed anxiety ppd baby blues mood therapist'],['Paternity form / not married','What the acknowledgment of paternity means','rights',null,'unmarried paternity birth certificate father name custody'],['Baby names: what\'s legal in your state','Accents, numbers, length limits','rights',null,'name naming accent'],['Paid leave and FMLA','Your leave options','rights',null,'leave work job paternity fmla paid'],['Contraction timer','Time contractions and check 5-1-1','birthday',null,'contractions timer 511 labor'],['Hospital bag checklist','Her bag, your bag, baby\'s bag','bag',null,'bag pack packing hospital'],['Car seat','Install and get it checked','gear',null,'car seat install'],['Safe sleep','Back, flat, nothing in the crib','gear',null,'sleep crib bassinet sids'],['Meal plan for dads','Freezer list and a weekly plan','you',null,'food meal cook freezer weight belly'],['Crisis or emergency','Emergency and crisis numbers','_help',null,'emergency suicide crisis danger bleeding 911 help']].forEach(a=>add(...a));
+function doSearch(){const q=$('#sq').value.toLowerCase().trim();if(!q){$('#sRes').innerHTML='';return}
+ const words=q.split(/\s+/).filter(w=>w.length>1);
+ const res=IDX.map(it=>{let sc=0;words.forEach(w=>{if(it.t.toLowerCase().includes(w))sc+=3;else if(it.txt.includes(w))sc+=1;else if(w.length>4&&it.txt.includes(w.slice(0,-1)))sc+=1});return [sc,it]}).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]).slice(0,8);
+ $('#sRes').innerHTML=res.length?res.map(([s,it],i)=>`<li><a href="#${it.v==='_help'?'home':it.v}" data-i="${IDX.indexOf(it)}"><b>${it.t}</b><span>${it.s}</span></a></li>`).join(''):'<li class="note">Nothing yet. Try other words, or <a href="#coaching">ask me directly</a>.</li>'}
+$('#sq').addEventListener('input',doSearch);
+$('#sRes').addEventListener('click',e=>{const a=e.target.closest('[data-i]');if(!a)return;const it=IDX[+a.dataset.i];sD.close();
+ if(it.v==='_help'){e.preventDefault();show($('#helpDlg'));return}
+ if(it.id&&it.id.startsWith('L:')){cur_l=it.id.slice(2);store('clesson',cur_l);renderCourse()}
+ setTimeout(()=>{const el=it.id&&!it.id.startsWith('L:')?document.getElementById(it.id):it.id?$('#cLesson'):null;if(el){if(el.tagName==='DETAILS')el.open=true;el.scrollIntoView({block:'center'});el.classList.add('flash');setTimeout(()=>el.classList.remove('flash'),1700)}},120)});
+const openSearch=()=>{show(sD);$('#sq').focus()};
+$('#searchBtn').addEventListener('click',openSearch);$('#sClose').addEventListener('click',()=>sD.close());
+$('#sHelp').addEventListener('click',e=>{e.preventDefault();sD.close();show($('#helpDlg'))});
+addEventListener('keydown',e=>{if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)){e.preventDefault();openSearch()}});
+
+/* ===== Trust slots: photo, reviewer, testimonials, newsletter ===== */
+if(PHOTO){const im=(sz)=>`<img src="${PHOTO}" alt="Nabil Rahman, portrait" width="${sz}" height="${sz}" style="width:${sz}px;height:${sz}px;border-radius:50%;object-fit:cover;display:block">`;$('#aboutPic').innerHTML=im(132);const cp=$('#coachPic');if(cp)cp.innerHTML=im(96)}
+if(REVIEWER){$('#reviewLine').hidden=false;$('#reviewLine').innerHTML=`<b>Medically reviewed</b> by ${REVIEWER.name}, ${REVIEWER.role}, ${REVIEWER.date}.`;$('#termsReview').innerHTML=`<b>Medical review:</b> the course and health content were reviewed by ${REVIEWER.name}, ${REVIEWER.role}, in ${REVIEWER.date}. The reviewer checked accuracy; opinions and coaching are Nabil's own.`;document.querySelectorAll('.trust').forEach(t=>t.insertAdjacentHTML('beforeend','<li>Medically reviewed</li>'))}
+if(TESTIMONIALS.length){const tq=TESTIMONIALS.map(t=>`<figure class="card" style="margin:0"><blockquote style="margin:0;font-family:Newsreader,serif;font-size:20px;line-height:1.35">"${esc(t.q)}"</blockquote><figcaption class="note" style="margin-top:10px">${esc(t.who)}</figcaption></figure>`).join('');$('#tList').innerHTML=tq;$('#tBand').hidden=false;$('#tList2').innerHTML=tq}
+if(NEWSLETTER_URL){$('#newsForm').innerHTML=`<h3>Free, monthly, no spam</h3><p>Sign-up takes 20 seconds on a secure page from Kit, my email service. Add your due date there and you'll get the right lesson each month.</p><p><a class="btn big coral" href="${NEWSLETTER_URL}" target="_blank" rel="noopener">Get the monthly lesson</a></p><p class="note">Unsubscribe any time with one click.</p>`}
+if(!NEWSLETTER_URL)$('#nBtn').addEventListener('click',()=>{const em=$('#nEmail').value.trim();
+ if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){$('#nOut').innerHTML='<span style="color:var(--warn)">Please enter a valid email.</span>';return}
+ if(NEWSLETTER_URL){$('#nOut').innerHTML=`Almost done: <a href="${NEWSLETTER_URL}${NEWSLETTER_URL.includes('?')?'&':'?'}email=${encodeURIComponent(em)}" target="_blank" rel="noopener">confirm your subscription</a>.`;return}
+ const msg=`Please add me to the monthly Steady lesson email.\nName: ${$('#nName').value.trim()}\nEmail: ${em}${$('#nDue').value?'\nDue date: '+$('#nDue').value:''}`;
+ $('#nOut').innerHTML=`Thanks! For now, sign-ups are handled by hand: send this to <b>nabilrahman.rubab@gmail.com</b> and you're on the list.<pre class="out" style="margin-top:8px">${esc(msg)}</pre><button type="button" class="ghost" id="nCopy">Copy</button> <span id="nC"></span>`;
+ $('#nCopy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(msg);$('#nC').textContent='Copied.'}catch(e){$('#nC').textContent='Select and copy by hand.'}})});
+document.addEventListener('click',e=>{
+ if(e.target.closest('[data-news]')){e.preventDefault();location.hash='home';setTimeout(()=>{$('#news').scrollIntoView();$('#nEmail').focus()},150)}
+ if(e.target.closest('[data-story]')){const m=$('#cMsg');m.value=(m.value?m.value+'\n':'')+'My story (one honest sentence; OK to share with my first name and city: yes/no):\n';setTimeout(()=>m.focus(),300)}});
+
+/* ===== Router ===== */
+function route(){let k=(location.hash||'#home').slice(1);if(k==='journey')k='course';const anchor=k==='about'?'about':null;if(anchor)k='home';const v=VIEWS.some(x=>x[0]===k)?k:'home';
+ document.querySelectorAll('[data-view]').forEach(s=>s.classList.toggle('on',s.dataset.view===v));
+ document.querySelectorAll('#secNav a').forEach(a=>{if(a.dataset.k===v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+ window.scrollTo(0,0);if(v==='home')drawDuo();if(anchor)setTimeout(()=>document.getElementById(anchor).scrollIntoView(),60);
+ const cur2=document.querySelector(`#secNav a[data-k="${v}"]`);if(cur2&&cur2.scrollIntoView)cur2.scrollIntoView({block:'nearest',inline:'center'});}
+addEventListener('hashchange',route);
+
+ctRender();applyRegion();route();renderWeek();
+
+}
+</script>
+</body>
+</html>
